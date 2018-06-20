@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>sate - lanacion.com</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <!-- for Iphone -->
+    <meta name="apple-mobile-web-app-capable" content="no">
+
+    <!-- favicon -->
+    <link rel="icon" href="./favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="favicon.ico">
+
+    <!-- Metadata -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+    <meta name="copyright" content="2018 - LA NACION">
+    <meta name="title" content="sate - 20.5.2018">
+    <meta name="description" content="Sindicato argentino de técnicos escénicos">
+
+    <!-- Facebook metatags -->
+    <meta property="og:url" content="{URL DE ESTE ESPECIAL}">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="sate - LA NACION">
+    <meta property="og:description" content="Sindicato argentino de técnicos escénicos">
+    <meta property="og:image" content="{URL DE LA IMAGEN PRINCIPAL}">
+
+    <!-- Twitter cards -->
+    <meta name="twitter:url" content="{URL DE ESTE ESPECIAL}"  />
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="sate">
+    <meta name="twitter:description" content="Sindicato argentino de técnicos escénicos" />
+    <meta name="twitter:site" content="@LANACION">
+    <meta name="twitter:image" content="{URL DE LA IMAGEN PRINCIPAL}" />
+
+
+    <link rel="stylesheet" type="text/css" href="http://especiales.lanacion.com.ar/multimedia/proyectos/fonts/font.css">
+    <link rel="stylesheet" type="text/css" href="http://especiales.lanacion.com.ar/multimedia/proyectos/fonts/icons_v1/icons.css">
+
+    <!-- build:css -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- endbuild -->
+
+    
+</head>
+<body>
+<div class="container clearfix" >
+    <header>
+        <h1>sate</h1>
+        <h2>Sindicato argentino de técnicos escénicos</h2>
+        <div class="social">
+            <a class="icon-facebook-square" title="Compartilo en Facebook" href="'https://www.facebook.com/sharer/sharer.php?u=__URL__'" target="_blank" onclick="window.open(this.href, this.target, 'width=555,height=400'); return false;"></a>
+
+            <a class="icon-twitter" title="Compartilo en Twitter" href="'http://twitter.com/?status='+ encodeURIComponent((quote.quote_txt.length > 110 ? quote.quote_txt.slice(0, 110)+'... ' : quote.quote_txt+' ') + urlShare)" target="_blank" onclick="window.open(this.href, this.target, 'width=555,height=400'); return false;"></a>
+        </div>
+    </header>
+
+    <footer>
+        <p>Nota:
+        <br/>
+        Fuente:
+        </p>
+        <a href="./templates/credits.html" class="btn_light ajax_modal" id="creditos">Créditos</a>
+    </footer>
+</div> <!-- end wrapper_all -->
+
+<div id="append"> <!-- div for append dinamics contents... --></div>
+
+<!-- LN LOADER -->
+<div id="loader">
+
+<div id="spinner" style="width: 60px; height: 120px; position: relative; left: 50%; top: 20%; margin-left:-30px; background: url('http://especiales.lanacion.com.ar/multimedia/proyectos/LN_loader/ln.svg') center no-repeat;"></div>
+</div>
+<!-- LN LOADER -->
+
+</body>
+</html>
+
+<!-- PYM -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pym/1.2.0/pym.v1.min.js"></script>
+<!-- PYM -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
+<script>
+    var opts= {lines:40,length:2,width:1,radius:25,corners:0.5,rotate:1,color:"#006998",speed:1, trail:60,shadow:false,hwaccel:false,className:"spinner",zIndex:2000000000,top:0,left:0};
+    var target=document.getElementById("spinner");
+    var spinner=new Spinner(opts).spin(target);
+</script>
+
+<!-- vendors -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+<!-- build:js -->
+<script src="jsbuild/main.js"></script>
+<!-- endbuild -->

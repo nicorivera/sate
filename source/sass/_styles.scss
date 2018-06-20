@@ -1,0 +1,313 @@
+/* Styles for App */
+@import "variables";
+
+body{
+	margin: 10px auto;
+}
+
+div#to{
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	
+	nav{
+		width: 80%;
+		height: 60px;
+		margin: auto;
+		
+		#logoNav{
+			width: 60px;
+			display: inline-block;
+			vertical-align: middle;
+			top: 10px;
+			left: 0;
+		}
+
+		p{
+			width: 5%;
+			display: inline-block;
+			font-family: 'Arial', sans-serif;
+			font-weight: 100;
+			font-size: 15px;
+			text-align: right;
+			color: #000;
+			margin: auto;
+		}
+		
+		ul{
+			width: 50%;
+			display: inline-block;
+			margin: auto;
+			padding: 0;
+			
+			li{
+				width: 24%;
+				font-family: 'Arial', sans-serif;
+				font-weight: 400;
+				font-size: 15px;
+				color: #438ec4;
+				list-style: none;
+				display: inline-block;
+				margin: auto;
+				text-align: center;
+				
+				a{
+					text-decoration: none;
+				}
+			}	
+		}
+
+		select{
+			width: 15%;
+			display: inline-block;
+			margin: auto;
+		}
+	}
+}
+
+.etiqueta, .pie, footer a{
+	font-family: 'Arial', sans-serif;
+	font-weight: 400;
+	font-size: 15px;
+	color: #fff;
+}
+
+#sindica{
+	color: red;
+	background-color: #fff;
+	border: 1px solid red;
+	
+	&:active{
+		color: #fff;
+		background-color: red;
+	}
+}
+
+
+#afilia{
+	color: blue;
+	background-color: #fff;
+	border: 1px solid blue;
+	
+	&:active{
+		color: #fff;
+		background-color: blue;
+	}
+}
+
+
+#afiliad{
+	color: green;
+	background-color: #fff;
+	border: 1px solid green;
+	
+	&:active{
+		color: #fff;
+		background-color: green;
+	}
+}
+
+
+#histor{
+	color: yellow;
+	background-color: #fff;
+	border: 1px solid yellow;
+	
+	&:active{
+		color: #fff;
+		background-color: yellow;
+	}
+}
+
+
+#notici{
+	color: orange;
+	background-color: #fff;
+	border: 1px solid orange;
+	
+	&:active{
+		color: #fff;
+		background-color: orange;
+	}
+}
+
+#capacitaci{
+	color: pink;
+	background-color: #fff;
+	border: 1px solid pink;
+	
+	&:active{
+		color: #fff;
+		background-color: pink;
+	}
+}
+
+
+#gremial{
+	color: brown;
+	background-color: #fff;
+	border: 1px solid brown;
+	
+	&:active{
+		color: #fff;
+		background-color: brown;
+	}
+}
+
+#mesas{
+	color: green;
+	background-color: #fff;
+	border: 1px solid green;
+	
+	&:active{
+		color: #fff;
+		background-color: green;
+	}
+}
+
+#delegacion{
+	color: grey;
+	background-color: #fff;
+	border: 1px solid grey;
+	
+	&:active{
+		color: #fff;
+		background-color: grey;
+	}
+}
+
+
+#ergonom{
+	color: light-blue;
+	background-color: #fff;
+	border: 1px solid light-blue;
+	
+	&:active{
+		color: #fff;
+		background-color: light-blue;
+	}
+}
+
+
+#segurid{
+	color: blue;
+	background-color: #fff;
+	border: 1px solid blue;
+	
+	&:active{
+		color: #fff;
+		background-color: blue;
+	}
+}
+
+#contene{
+	width: 80%;
+	margin: auto;
+	
+	.noti{
+		width: 100%;
+		border-bottom: 1px dashed #438ec4;
+		margin: auto;
+		
+		h2.titu{
+			font-family: 'Arial', sans-serif;
+			font-weight: 500;
+			font-size: 32px;
+			color: #438ec4;
+		}
+
+		h3.baja{
+			font-family: 'Arial', sans-serif;
+			font-weight: 100;
+			font-size: 20px;
+			color: #000;
+		}
+		
+		.notiTex{
+			color: red;
+		}
+
+		#fecha, #autor{
+			font-family: 'Arial', sans-serif;
+			font-weight: 400;
+			font-size: 12px;
+			color: #999;
+			text-transform: uppercase;
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		#autor{
+			margin-left: 20px;
+		}
+	}
+}
+
+.tex, .texD{
+	width: 100%;
+	font-family: 'Arial', sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	color: #000;
+}
+
+.texD{
+	width: 50%;
+}
+
+.foto{
+	width: 100%;
+	margin: auto;
+	height: 200px;
+	border: 1px solid #dadada;
+}
+
+.fotoD{
+	width: 50%;
+	margin: auto;
+}
+
+footer{
+
+	width: 100%;
+	margin: auto;
+	position: fixed;
+	bottom: 0;
+	background-color: #438ec4;
+	color: #fff;
+	padding: 10px 10%;
+	
+	p, a{
+		margin: auto;
+		display: inline-block;
+		text-decoration: none;
+	}
+	
+	div{
+		width: 80%;
+		margin: auto;
+	}
+	.fac, .twi{
+		width: 35px;
+		height: 30px;
+		background-image: url('../img/red.svg');
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.fac{
+		background-position: top left;
+		
+		&:hover{
+			background-position: bottom left;
+		}
+	}
+
+	.twi{
+		background-position: top right;
+		
+		&:hover{
+			background-position: bottom right;
+		}
+	}
+}
