@@ -35,8 +35,9 @@ div#to{
 		}
 		
 		ul{
-			width: 50%;
+			width: 70%;
 			display: inline-block;
+			text-align: center;
 			margin: auto;
 			padding: 0;
 			
@@ -58,9 +59,39 @@ div#to{
 		}
 
 		select{
-			width: 15%;
-			display: inline-block;
+			width: 30%;
+			display: block;
 			margin: auto;
+			text-align: center;
+		}
+
+		a{
+			margin: auto;
+			display: inline-block;
+			text-decoration: none;
+		}
+		.fac, .twi{
+			width: 35px;
+			height: 30px;
+			background-image: url('../img/red.svg');
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.fac{
+			background-position: bottom left;
+			
+			&:hover{
+				background-position: top left;
+			}
+		}
+
+		.twi{
+			background-position: bottom right;
+			
+			&:hover{
+				background-position: top right;
+			}
 		}
 	}
 }

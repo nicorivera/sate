@@ -10,14 +10,14 @@ $(function () {
     /** Code! */
 
 
-var SR = require('js/sr');
+var sr = require('./sr');
     // require(['sr'], function (sr) {
     //     //foo is now loaded.
     //     console.log("hola9999999");
     // });
     
-    let dataDrive = "https://olcreativa.lanacion.com.ar/dev/get_url/?key2=1auWKBVxPLjPVg71G9mugJqt4fDjWpuEFqk7r9lPcm44";
-    //let dataDrive = "https://docs.google.com/spreadsheets/d/1auWKBVxPLjPVg71G9mugJqt4fDjWpuEFqk7r9lPcm44/edit#gid=0";
+    //let dataDrive = "https://olcreativa.lanacion.com.ar/dev/get_url/?key2=1auWKBVxPLjPVg71G9mugJqt4fDjWpuEFqk7r9lPcm44";
+    let dataDrive = "https://docs.google.com/spreadsheets/d/1auWKBVxPLjPVg71G9mugJqt4fDjWpuEFqk7r9lPcm44/edit#gid=0";
     //let dataDrive = "https://docs.google.com/spreadsheets/d/1KqGmwFI_-3GfdNdpT-iKHiKHU2GUqQL-eYC63hMs_M0/edit#gid=0";
 
     var app = {
@@ -32,7 +32,7 @@ var SR = require('js/sr');
 
                 success: function(data){
                     //console.log("haaaaaaaaaaaaaa");
-                    var notis = data;
+                    notis = data;
                     app.carga(notis);
                 },
                 error: function(error, status) {
@@ -42,7 +42,6 @@ var SR = require('js/sr');
         },
 
         carga: function(notis){
-                    console.log(data);
 
             var noti;
 

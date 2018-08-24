@@ -7,7 +7,7 @@ const path = require('path');
 const opn = require('opn');
 
 const credentialsPath = './s3Credentials.json';
-const pathProduction = "http://especialess3.lanacion.com.ar/";
+const pathProduction = "https://especialess3.lanacion.com.ar/";
 
 gulp.task('deploy', function () {
 
