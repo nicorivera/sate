@@ -4,94 +4,87 @@
 body{
 	margin: 10px auto;
 }
-
-div#to{
+	
+nav{
 	width: 100%;
-	max-width: 1200px;
+	max-widht: 1260px;
+	height: 60px;
 	margin: 0 auto;
 	
-	nav{
-		width: 80%;
-		height: 60px;
+	.logo{
+		width: 80px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	p{
+		width: 5%;
+		display: inline-block;
+		font-family: 'Arial', sans-serif;
+		font-weight: 100;
+		font-size: 15px;
+		text-align: right;
+		color: #000;
 		margin: auto;
+	}
+	
+	ul{
+		width: 70%;
+		display: inline-block;
+		text-align: center;
+		margin: auto;
+		padding: 0;
 		
-		#logoNav{
-			width: 60px;
-			display: inline-block;
-			vertical-align: middle;
-			top: 10px;
-			left: 0;
-		}
-
-		p{
-			width: 5%;
-			display: inline-block;
+		li{
+			width: 24%;
 			font-family: 'Arial', sans-serif;
-			font-weight: 100;
+			font-weight: 400;
 			font-size: 15px;
-			text-align: right;
-			color: #000;
+			color: #438ec4;
+			list-style: none;
+			display: inline-block;
 			margin: auto;
-		}
+			text-align: center;
+			
+			a{
+				text-decoration: none;
+			}
+		}	
+	}
+
+	select{
+		width: 30%;
+		display: block;
+		margin: auto;
+		text-align: center;
+	}
+
+	a{
+		margin: auto;
+		display: inline-block;
+		text-decoration: none;
+	}
+	.fac, .twi{
+		width: 35px;
+		height: 30px;
+		background-image: url('../img/red.svg');
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.fac{
+		background-position: bottom left;
 		
-		ul{
-			width: 70%;
-			display: inline-block;
-			text-align: center;
-			margin: auto;
-			padding: 0;
-			
-			li{
-				width: 24%;
-				font-family: 'Arial', sans-serif;
-				font-weight: 400;
-				font-size: 15px;
-				color: #438ec4;
-				list-style: none;
-				display: inline-block;
-				margin: auto;
-				text-align: center;
-				
-				a{
-					text-decoration: none;
-				}
-			}	
+		&:hover{
+			background-position: top left;
 		}
+	}
 
-		select{
-			width: 30%;
-			display: block;
-			margin: auto;
-			text-align: center;
-		}
-
-		a{
-			margin: auto;
-			display: inline-block;
-			text-decoration: none;
-		}
-		.fac, .twi{
-			width: 35px;
-			height: 30px;
-			background-image: url('../img/red.svg');
-			display: inline-block;
-			vertical-align: middle;
-		}
-
-		.fac{
-			background-position: bottom left;
-			
-			&:hover{
-				background-position: top left;
-			}
-		}
-
-		.twi{
-			background-position: bottom right;
-			
-			&:hover{
-				background-position: top right;
-			}
+	.twi{
+		background-position: bottom right;
+		
+		&:hover{
+			background-position: top right;
 		}
 	}
 }
