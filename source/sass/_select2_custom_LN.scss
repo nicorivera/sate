@@ -5,18 +5,29 @@
 }
 
 .select2-container--default .select2-selection--single .select2-selection__rendered{
-    font-family: 'Suecaslabmedium', Georgia;
-    color:#29ABE2;
+    font-family: 'Arial', sans-serif;
+    color:#438ec4;
+    font-size: 15px;
+    text-transform: uppercase;
     text-align: center;
-    line-height: 32px;
-    padding-left: 20px;
-    padding-right: 30px;
+    // line-height: 32px;
+    // padding-left: 20px;
+    // padding-right: 30px;
+    &:after{
+        content:"";
+        width: 30px;
+        height: 30px;
+        padding-left: 10px;
+        bacground-image: url("../img/sprite.svg");
+        background-position: left top;
+        background-size: 100%;
+    }
 }
 
 .select2-container--default .select2-selection--single {
-    border: 1px solid #29ABE2;
-    border-radius: 100px;
-    height: 34px;
+    border-bottom: 1px solid #29ABE2;
+    //border-radius: 100px;
+    height: 30px;
 }
 
 .select2-container--default.select2-container--open.select2-container--below .select2-selection--single, .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple {

@@ -12,8 +12,10 @@
     <meta name="description" content="Sindicato Argentino de Técnicos Escénicos">
     <!-- build:css -->
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
     <!-- endbuild -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 </head>
 <body>
 	<nav>
@@ -25,11 +27,26 @@
 			<li class="bot" id="capacitacion">CAPACITACIÓN</li>
 			<li class="bot" id="manual">MANUAL</li>
 		</ul>
-		<div class="redes"><ul class="nav navbar-nav">
-            <li><a href="https://www.facebook.com/utra.nacional?fref=ts" target="_blank"><i class="fa fa-facebook-official fa-lg"></i></a></li>
-            <li><a href="https://twitter.com/UNIONDETECNICOS" target="_blank"><i class="fa fa-twitter fa-lg"></i></a></li>
+		<div id="filtro">
+			<select id="selFiltro" class="js-example-basic-single">
+				<option class="0" selected disabled>Filtrá por sección</option>
+				<option class="sindicato">SINDICATO</option>
+				<option class="prensa">PRENSA</option>
+				<option class="afiliados">AFILIADOS</option>
+			</select>
+		</div>
+		
+		<div id="redes"><ul class="nav navbar-nav">
+            <li class="red"><a href="https://www.facebook.com/utra.nacional?fref=ts" target="_blank"><i class="fac fa-facebook-official fa-lg"></i></a></li>
+            <li class="red"><a href="https://twitter.com/UNIONDETECNICOS" target="_blank"><i class="twi fa-twitter fa-lg"></i></a></li>
         </div>
 	</nav>
 
 </body>
+<script type="text/javascript">
+	$("#selFiltro").select2({
+		minimumResultsForSearch: Infinity,
+        placeholder: "Seleccioná"
+    });
+</script>
 </html>

@@ -10,7 +10,7 @@ $(function () {
     /** Code! */
 
 
-var SR = require('js/sr');
+//var SR = require('js/sr');
     // require(['sr'], function (sr) {
     //     //foo is now loaded.
     //     console.log("hola9999999");
@@ -43,6 +43,7 @@ var SR = require('js/sr');
 
         carga: function(notis){
                     console.log(data);
+
 
             var noti;
 

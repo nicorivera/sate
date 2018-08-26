@@ -3,18 +3,24 @@
 
 body{
 	margin: 10px auto;
+	border: none;
 }
+
 	
 nav{
 	width: 100%;
-	max-widht: 1260px;
+	max-width: 1260px;
 	height: 60px;
 	margin: 0 auto;
+	text-align: center;
 	
 	.logo{
-		width: 80px;
 		display: inline-block;
 		vertical-align: middle;
+
+		img{
+			width: 80px;		
+		}
 	}
 
 	p{
@@ -27,16 +33,22 @@ nav{
 		color: #000;
 		margin: auto;
 	}
-	
+
 	ul{
-		width: 70%;
+		height: 30px;
 		display: inline-block;
 		text-align: center;
 		margin: auto;
 		padding: 0;
+		vertical-align: center;
+	}
+	
+	ul#botones{
+		width: 50%;
 		
-		li{
+		li.bot{
 			width: 24%;
+			height: 30px;
 			font-family: 'Arial', sans-serif;
 			font-weight: 400;
 			font-size: 15px;
@@ -52,11 +64,19 @@ nav{
 		}	
 	}
 
-	select{
-		width: 30%;
-		display: block;
+	#filtro{
+		width: 15%;
 		margin: auto;
-		text-align: center;
+		display: inline-block;
+		vertical-align: middle;
+		text-align: left;
+
+		select{
+			display: none;
+			//width: 30%;
+			margin: auto;
+			text-align: center;
+		}
 	}
 
 	a{
@@ -64,30 +84,48 @@ nav{
 		display: inline-block;
 		text-decoration: none;
 	}
-	.fac, .twi{
-		width: 35px;
-		height: 30px;
-		background-image: url('../img/red.svg');
+
+	#redes{
+		width: 10%;
 		display: inline-block;
-		vertical-align: middle;
-	}
+		vertical-align: center;
 
-	.fac{
-		background-position: bottom left;
-		
-		&:hover{
-			background-position: top left;
-		}
-	}
+		ul{
+			width: 100%;
 
-	.twi{
-		background-position: bottom right;
-		
-		&:hover{
-			background-position: top right;
+			li.red{
+				margin-left: 5px;
+				display: inline-block;
+				.fac, .twi{
+					width: 40px;
+					height: 30px;
+					background-image: url('../img/red.svg');
+					display: inline-block;
+					vertical-align: middle;
+				}
+
+				.fac{
+					background-position: top left;
+					
+					&:hover{
+						background-position: bottom left;
+					}
+				}
+
+				.twi{
+					background-position: top right;
+					
+					&:hover{
+						background-position: bottom right;
+					}
+				}
+				
+			}
 		}
 	}
 }
+
+
 
 .etiqueta, .pie, footer a{
 	font-family: 'Arial', sans-serif;
@@ -224,49 +262,6 @@ nav{
 	}
 }
 
-#contene{
-	width: 80%;
-	margin: auto;
-	
-	.noti{
-		width: 100%;
-		border-bottom: 1px dashed #438ec4;
-		margin: auto;
-		
-		h2.titu{
-			font-family: 'Arial', sans-serif;
-			font-weight: 500;
-			font-size: 32px;
-			color: #438ec4;
-		}
-
-		h3.baja{
-			font-family: 'Arial', sans-serif;
-			font-weight: 100;
-			font-size: 20px;
-			color: #000;
-		}
-		
-		.notiTex{
-			color: red;
-		}
-
-		#fecha, #autor{
-			font-family: 'Arial', sans-serif;
-			font-weight: 400;
-			font-size: 12px;
-			color: #999;
-			text-transform: uppercase;
-			display: inline-block;
-			vertical-align: middle;
-		}
-
-		#autor{
-			margin-left: 20px;
-		}
-	}
-}
-
 .tex, .texD{
 	width: 100%;
 	font-family: 'Arial', sans-serif;
@@ -289,49 +284,4 @@ nav{
 .fotoD{
 	width: 50%;
 	margin: auto;
-}
-
-footer{
-
-	width: 100%;
-	margin: auto;
-	position: fixed;
-	bottom: 0;
-	background-color: #438ec4;
-	color: #fff;
-	padding: 10px 10%;
-	
-	p, a{
-		margin: auto;
-		display: inline-block;
-		text-decoration: none;
-	}
-	
-	div{
-		width: 80%;
-		margin: auto;
-	}
-	.fac, .twi{
-		width: 35px;
-		height: 30px;
-		background-image: url('../img/red.svg');
-		display: inline-block;
-		vertical-align: middle;
-	}
-
-	.fac{
-		background-position: top left;
-		
-		&:hover{
-			background-position: bottom left;
-		}
-	}
-
-	.twi{
-		background-position: top right;
-		
-		&:hover{
-			background-position: bottom right;
-		}
-	}
 }

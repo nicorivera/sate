@@ -18,7 +18,9 @@
     },
     "pre-commit": [],
     "homepage": "",
-    "dependencies": {},
+    "dependencies": {
+        "select2": "^4.0.6-rc.1"
+    },
     "devDependencies": {
         "babel-cli": "^6.24.1",
         "babel-preset-es2015": "^6.24.1",
