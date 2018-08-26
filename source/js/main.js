@@ -5,11 +5,12 @@
 //   window.Promise = Promise;
 // }
 
-
 $(function () {
     /** Code! */
 
-
+    let ancho = $(".container").width(),
+        dataDrive,
+        notis;
 //var SR = require('js/sr');
     // require(['sr'], function (sr) {
     //     //foo is now loaded.
@@ -32,7 +33,7 @@ $(function () {
 
                 success: function(data){
                     //console.log("haaaaaaaaaaaaaa");
-                    var notis = data;
+                    notis = data;
                     app.carga(notis);
                 },
                 error: function(error, status) {
