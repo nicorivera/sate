@@ -17,7 +17,7 @@ var sr = require('./sr');
     // });
     
     //let dataDrive = "https://olcreativa.lanacion.com.ar/dev/get_url/?key2=1auWKBVxPLjPVg71G9mugJqt4fDjWpuEFqk7r9lPcm44";
-    let dataDrive = "https://docs.google.com/spreadsheets/d/1auWKBVxPLjPVg71G9mugJqt4fDjWpuEFqk7r9lPcm44/edit#gid=0";
+    let dataDrive = SR.getGdocUrlCdn("https://docs.google.com/spreadsheets/d/1auWKBVxPLjPVg71G9mugJqt4fDjWpuEFqk7r9lPcm44/edit#gid=0");
     //let dataDrive = "https://docs.google.com/spreadsheets/d/1KqGmwFI_-3GfdNdpT-iKHiKHU2GUqQL-eYC63hMs_M0/edit#gid=0";
 
     var app = {

@@ -7,17 +7,12 @@
 
 $(function () {
     /** Code! */
-
+    var SR = require('./sr');
     let ancho = $(".container").width(),
-        dataDrive,
         notis;
-//var SR = require('js/sr');
-    // require(['sr'], function (sr) {
-    //     //foo is now loaded.
-    //     console.log("hola9999999");
-    // });
+
     
-    let dataDrive = "https://olcreativa.lanacion.com.ar/dev/get_url/?key2=1auWKBVxPLjPVg71G9mugJqt4fDjWpuEFqk7r9lPcm44";
+    let dataDrive = SR.getGdocUrlCdn("https://docs.google.com/spreadsheets/d/1auWKBVxPLjPVg71G9mugJqt4fDjWpuEFqk7r9lPcm44/edit#gid=0");
     //let dataDrive = "https://docs.google.com/spreadsheets/d/1auWKBVxPLjPVg71G9mugJqt4fDjWpuEFqk7r9lPcm44/edit#gid=0";
     //let dataDrive = "https://docs.google.com/spreadsheets/d/1KqGmwFI_-3GfdNdpT-iKHiKHU2GUqQL-eYC63hMs_M0/edit#gid=0";
 
@@ -32,9 +27,9 @@ $(function () {
                 dataType: "json",
 
                 success: function(data){
-                    //console.log("haaaaaaaaaaaaaa");
+                    console.log("haaaaaaaaaaaaaa");
                     notis = data;
-                    app.carga(notis);
+                    app.armaData(notis);
                 },
                 error: function(error, status) {
                     console.log("error", status);
@@ -42,43 +37,37 @@ $(function () {
             });
         },
 
-        carga: function(notis){
-                    console.log(data);
+        armaData: function(){
+
+            for (var i = 0; i < notis.length; i++) {
 
 
-            var noti;
+                let titulo = notis[i].titulo,
+                    bajada = notis[i].bajada,
+                    foto_tipo = notis[i].foto_tipo,
+                    foto = notis[i].foto,
+                    fecha = notis[i].fecha,
+                    autor = notis[i].autor,
+                    etiqueta = notis[i].etiqueta,
+                    seccion = notis[i].seccion,
+                    texto = notis[i].texto;
 
-            // $("#contene").append(function(notis){
-                //var i;
-                //var notis;
-                for(var i = 0; i < notis.length; i++){
-                //for(var i in notis){
+                    console.log(titulo);
 
-                    let titulo = notis.titulo,
-                        bajada = notis.bajada,
-                        foto_tipo = notis.foto_tipo,
-                        foto = notis.foto,
-                        fecha = notis.fecha,
-                        autor = notis.autor,
-                        texto = notis.texto;
-
-                    //notis += '<div class="noti">';
-                    noti = '<div><h2 class="titu">' + titulo + '</h2>';
-                    noti += '<h3 class="baja">' + bajada + '</h3>';
-                    noti += '<div class="foto ' + foto_tipo + '" style="background-image:url(img/'+ foto+')"></div>';
-                    noti += '<div><p id="fecha">'+ fecha +'</p><p id="autor">'+ autor+'</p></div>';
-                    noti += '<div class="notiTex"><p class="tex">'+ texto +'</p></div>';
-                    noti += '</div>';
-                }
-                $('#contene .noti').append(noti);
-                console.log(notis);
-            //})
-        },
+                let aviso = '<div><h2 class="titu">' + titulo + '</h2>';
+                    aviso += '<h3 class="baja">' + bajada + '</h3>';
+                    aviso += '<div class="foto ' + foto_tipo + '" style="background-image:url(img/'+ foto+')"></div>';
+                    aviso += '<div><p id="fecha">'+ fecha +'</p><p id="autor">'+ autor+'</p></div>';
+                    aviso += '<div class="notiTex"><p class="tex">'+ texto +'</p></div>';
+                    aviso += '</div>';
+            
+                $('#contenedor').append(aviso);
+            }
+        }
     }
 
     app.init();
-    app.carga();
-
+app.armaData();
 });
 
 
