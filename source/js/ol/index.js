@@ -36,7 +36,7 @@ module.exports.init = function () {
 };
 
 /** ini PYM*/
-module.exports.pymChild = new pym.Child();
+//module.exports.pymChild = new pym.Child();
 
 /** loder mothods */
 module.exports.loader = {

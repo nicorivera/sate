@@ -7,12 +7,12 @@
 
 $(function () {
     /** Code! */
-    var SR = require('./sr');
+    var OL = require('./ol');
     let ancho = $(".container").width(),
         notis;
 
-    
-    let dataDrive = SR.getGdocUrlCdn("https://docs.google.com/spreadsheets/d/1auWKBVxPLjPVg71G9mugJqt4fDjWpuEFqk7r9lPcm44/edit#gid=0");
+
+    let dataDrive = OL.getGdocUrlCdn("https://docs.google.com/spreadsheets/d/1auWKBVxPLjPVg71G9mugJqt4fDjWpuEFqk7r9lPcm44/edit#gid=0");
     //let dataDrive = "https://docs.google.com/spreadsheets/d/1auWKBVxPLjPVg71G9mugJqt4fDjWpuEFqk7r9lPcm44/edit#gid=0";
     //let dataDrive = "https://docs.google.com/spreadsheets/d/1KqGmwFI_-3GfdNdpT-iKHiKHU2GUqQL-eYC63hMs_M0/edit#gid=0";
 
@@ -37,7 +37,7 @@ $(function () {
             });
         },
 
-        armaData: function(){
+        armaData: function(notis){
 
             for (var i = 0; i < notis.length; i++) {
 
@@ -52,12 +52,12 @@ $(function () {
                     seccion = notis[i].seccion,
                     texto = notis[i].texto;
 
-                    console.log(titulo);
+                    console.log(etiqueta);
 
-                let aviso = '<div><h2 class="titu">' + titulo + '</h2>';
+                let aviso = '<div class="noti"><h2 class="titu">' + titulo + '</h2>';
                     aviso += '<h3 class="baja">' + bajada + '</h3>';
                     aviso += '<div class="foto ' + foto_tipo + '" style="background-image:url(img/'+ foto+')"></div>';
-                    aviso += '<div><p id="fecha">'+ fecha +'</p><p id="autor">'+ autor+'</p></div>';
+                    aviso += '<div class="info"><p class="fecha">'+ fecha +' | '+ autor+'</p><p class="etiqueta">'+etiqueta+'</p></div>';
                     aviso += '<div class="notiTex"><p class="tex">'+ texto +'</p></div>';
                     aviso += '</div>';
             
@@ -67,7 +67,7 @@ $(function () {
     }
 
     app.init();
-app.armaData();
+
 });
 
 

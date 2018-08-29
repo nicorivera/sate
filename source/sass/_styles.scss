@@ -5,221 +5,307 @@ body{
 	margin: auto;
 }
 
-nav{
-	width: 100%;
+.container{
+
 	max-width: 1260px;
-	height: 90px;
-	margin:auto;
-	padding: 5px 0;
-	text-align: center;
-	
-	.logo{
-		width: 15%;
-		display: inline-block;
-		vertical-align: middle;
 
-		img{
-			width: 80px;		
-		}
-	}
-
-	p{
-		width: 5%;
-		display: inline-block;
-		font-family: 'Arial', sans-serif;
-		font-weight: 100;
-		font-size: 15px;
-		text-align: right;
-		color: #000;
-		margin: auto;
-	}
-
-	ul{
-		height: 30px;
-		display: inline-block;
+	nav{
+		width: 100%;
+		max-width: 1260px;
+		height: 90px;
+		margin:auto;
+		padding: 5px 0;
 		text-align: center;
-		margin: auto;
-		padding: 0;
-		vertical-align: middle;
-	}
-	
-	ul#botones{
-		width: 50%;
 		
-		li.bot{
-			width: calc(32% - 5px);
-			height: 30px;
-			font-family: 'Arial', sans-serif;
-			font-weight: 400;
-			font-size: 15px;
-			//color: #438ec4;
-			//color: #000;
-			list-style: none;
+		.logo{
+			width: 15%;
 			display: inline-block;
-			//padding: 7px 0;
+			vertical-align: middle;
+
+			img{
+				width: 80px;		
+			}
+		}
+
+		p{
+			width: 5%;
+			display: inline-block;
+			font-family: 'Arial', sans-serif;
+			font-weight: 100;
+			font-size: 15px;
+			text-align: right;
+			color: #000;
 			margin: auto;
+		}
+
+		ul{
+			height: 30px;
+			display: inline-block;
 			text-align: center;
-			cursor: pointer;
-			vertical-align: middle;
-
-			a{
-				color: #000;
-				height: 20px;
-				text-decoration: none;
-				line-height: 30px;
-
-				&:link, &:visited{
-					color: #000;
-				}
-
-				&:hover{
-					color: #438ec4;
-				}
-
-
-			}
-			&:active, &:visited{
-				color: #fff;
-				background-color: #438ec4;
-			}
-		}	
-	}
-
-	#filtro{
-		width: 15%;
-		height: 30px;
-		margin: auto;
-		display: inline-block;
-		vertical-align: middle;
-		text-align: left;
-	    line-height: 27px;
-
-	    ul#selFiltro{
-	    	width: 100%;
-	    	height: 30px;
 			margin: auto;
+			padding: 0;
 			vertical-align: middle;
-			position: relative;
-			cursor: pointer;
+		}
+		
+		ul#botones{
+			width: 50%;
 			
-			.interior{
-				display: none;
-				// li &:hover{
-				// 	color: #438ec4;
-				// 	border-bottom: 1px solid #438ec4;
-				// }
-			} /* oculta las listas anidadas */
-			input[name="list"] {
-				position: absolute;
-				left: -1000em;
-			}
-			input:checked ~ ul{
-				display: block;
-			}
-
-			li.opcion{
+			li.bot{
+				width: calc(32% - 5px);
+				height: 30px;
+				font-family: 'Arial', sans-serif;
+				font-weight: 400;
+				font-size: 15px;
+				//color: #438ec4;
+				//color: #000;
 				list-style: none;
-				font-size: 14px;
-				text-transform: uppercase;
-				text-align: left;
+				display: inline-block;
+				//padding: 7px 0;
+				margin: auto;
+				text-align: center;
 				cursor: pointer;
-				border-bottom: 1px solid #fff;
+				vertical-align: middle;
 
-				&:hover{
-					//color: #438ec4;
-					border-bottom: 1px solid #438ec4;
+				a{
+					color: #000;
+					height: 20px;
+					text-decoration: none;
+					line-height: 30px;
+
+					&:link, &:visited{
+						color: #000;
+					}
+
+					&:hover{
+						color: #438ec4;
+					}
+
+
+				}
+				&:active, &:visited{
+					color: #fff;
+					background-color: #438ec4;
+				}
+			}	
+		}
+
+		#filtro{
+			width: 15%;
+			height: 30px;
+			margin: auto;
+			display: inline-block;
+			vertical-align: middle;
+			text-align: left;
+		    line-height: 27px;
+
+		    ul#selFiltro{
+		    	width: 100%;
+		    	height: 30px;
+				margin: auto;
+				vertical-align: middle;
+				position: relative;
+				cursor: pointer;
+				padding-left: 5px;
+				
+				.interior{
+					display: none;
+					// li &:hover{
+					// 	color: #438ec4;
+					// 	border-bottom: 1px solid #438ec4;
+					// }
+				} /* oculta las listas anidadas */
+				input[name="list"] {
+					position: absolute;
+					left: -1000em;
+				}
+				input:checked ~ ul{
+					display: block;
 				}
 
-				&#filtra{
+				li.opcion{
+					width: 100%;
+					list-style: none;
+					font-size: 14px;
+					text-transform: uppercase;
+					text-align: left;
+					cursor: pointer;
 					border-bottom: 1px solid #fff;
-					height: 30px;
+					background-color: #fff;
+					padding-left: 5px;
 
-					&:after{
-				        content:"";
-				        width: 40px;
-				        height: 30px;
-				        position: absolute;
-				        top: 0;
-				        right: -5px;
-		    			background-repeat: no-repeat;
-				        background-image: url("../img/sprite.svg");
-				        background-position: left -2px;
-		    			background-size: 200%;
-				    }
 					&:hover{
 						//color: #438ec4;
 						border-bottom: 1px solid #438ec4;
+					}
+
+					&#filtra{
+						border-bottom: 1px solid #fff;
+						height: 30px;
 
 						&:after{
-					        background-position: right -2px;
+					        content:"";
+					        width: 40px;
+					        height: 30px;
+					        position: absolute;
+					        top: 0;
+					        right: -5px;
+			    			background-repeat: no-repeat;
+					        background-image: url("../img/sprite.svg");
+					        background-position: left -2px;
+			    			background-size: 200%;
 					    }
+						&:hover{
+							//color: #438ec4;
+							border-bottom: 1px solid #438ec4;
+
+							&:after{
+						        background-position: right -2px;
+						    }
+						}
+					}
+
+					&#todo{
+						margin-top: 5px;
 					}
 				}
+			    
+		    }
 
-				&#todo{
-					margin-top: 5px;
-				}
-			}
-		    
-	    }
+		}
 
-	}
+		a{
+			margin: auto;
+			display: inline-block;
+			text-decoration: none;
+		}
 
-	a{
-		margin: auto;
-		display: inline-block;
-		text-decoration: none;
-	}
+		#redes{
+			width: 15%;
+			display: inline-block;
+			vertical-align: middle;
 
-	#redes{
-		width: 15%;
-		display: inline-block;
-		vertical-align: middle;
+			ul{
+				width: 100%;
 
-		ul{
-			width: 100%;
-
-			li.red{
-				margin-left: 5px;
-				display: inline-block;
-
-				.fac, .twi{
-					width: 40px;
-					height: 30px;
-					background-image: url('../img/red.svg');
+				li.red{
+					margin-left: 5px;
 					display: inline-block;
-					vertical-align: middle;
-				}
 
-				.fac{
-					background-position: top left;
-					
-					&:hover{
-						background-position: bottom left;
+					.fac, .twi{
+						width: 40px;
+						height: 30px;
+						background-image: url('../img/red.svg');
+						display: inline-block;
+						vertical-align: middle;
 					}
-				}
 
-				.twi{
-					background-position: top right;
-					
-					&:hover{
-						background-position: bottom right;
+					.fac{
+						background-position: top left;
+						
+						&:hover{
+							background-position: bottom left;
+						}
 					}
+
+					.twi{
+						background-position: top right;
+						
+						&:hover{
+							background-position: bottom right;
+						}
+					}
+					
 				}
-				
 			}
 		}
 	}
+
+	#contenedor{
+
+		width: 100%;
+		max-width: 1260px;
+		margin: auto;
+
+		.noti{
+
+			width: 46%;
+			margin: 30px 1%;
+			padding-bottom: 25px;
+			display: inline-block;
+			vertical-align: top;
+			border-bottom: 1px solid #dadada;
+
+			h2.titu{
+				font-family: 'Arial', sans-serif;
+				font-size: 28px;
+				color: #438ec4;
+				margin: 20px auto;
+				text-align: left;
+				padding: 0;
+			}
+
+			h3.baja{
+				font-family: 'Arial', sans-serif;
+				font-size: 18px;
+				color: #999;
+				margin: 0 auto 20px;
+				text-align: left;
+				padding: 0;
+			}
+
+			.info{
+				width: 95%;
+				height: 30px;
+				margin: 10px auto;
+				position: relative;
+
+				p{
+					font-family: 'Arial', sans-serif;
+					font-weight: 400;
+					font-size: 15px;
+					line-height: 29px;
+					display: inline-block;
+					position: absolute;
+					
+					&.fecha{
+						height: 30px;
+						left: 0;
+					}
+
+					&.etiqueta{
+						width: 150px;
+						height: 30px;
+						text-align: center;
+						text-transform: uppercase;
+						color: #000;
+						right: 0;
+						border: 1px solid #000;
+						cursor: pointer;
+					}
+				}
+			}
+
+			.notiTex{
+				width: 95%;
+				margin: 20px auto;
+
+				.tex{
+					width: 100%;
+					font-family: 'Arial', sans-serif;
+					font-weight: 400;
+					line-height: 22px;
+				    font-size: 16px;
+					color: #000;
+				}
+			}
+			
+		}
+
+		
+	}
 }
 
 
-
-.etiqueta, .pie{
-	font-family: 'Arial', sans-serif;
-	font-weight: 400;
-	font-size: 15px;
-	color: #fff;
-}
 
 #sindica{
 	color: red;
@@ -349,13 +435,7 @@ nav{
 	}
 }
 
-.tex, .texD{
-	width: 100%;
-	font-family: 'Arial', sans-serif;
-	font-weight: 400;
-	font-size: 18px;
-	color: #000;
-}
+
 
 .texD{
 	width: 50%;

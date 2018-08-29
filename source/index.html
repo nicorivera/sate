@@ -18,35 +18,37 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 </head>
 <body>
-	<nav>
-		<div class="logo">
-			<a href="#"><img src="img/logo_sate.png"></a>
-		</div>
-		<ul id="botones">
-			<li class="bot" id="noticias"><a href="#">NOTICIAS</a></li>
-			<li class="bot" id="capacitacion"><a href="#">CAPACITACIÓN</a></li>
-			<li class="bot" id="manual"><a href="#">MANUAL</a></li>
-		</ul>
-		<div id="filtro">
-			<ul id="selFiltro">
-				<li class="opcion" id="filtra"><input type="checkbox" name="list" class="opcion" id="checkFiltra"><label for="checkFiltra">Filtrá por sección</label>
-					<ul class="interior">
-						<li class="opcion" id="todo">TODO</li>
-						<li class="opcion" id="sindicato">SINDICATO</li>
-						<li class="opcion" id="prensa">PRENSA</li>
-						<li class="opcion" id="afiliados">AFILIADOS</li>
-					</ul>
-				</li>	
+	<div class="container">
+		<nav>
+			<div class="logo">
+				<a href="#"><img src="img/logo_sate.png"></a>
+			</div>
+			<ul id="botones">
+				<li class="bot" id="noticias"><a href="#">NOTICIAS</a></li>
+				<li class="bot" id="capacitacion"><a href="#">CAPACITACIÓN</a></li>
+				<li class="bot" id="manual"><a href="#">MANUAL</a></li>
 			</ul>
-		</div>
-		
-		<div id="redes"><ul class="nav navbar-nav">
-            <li class="red"><a href="https://www.facebook.com/utra.nacional?fref=ts" target="_blank"><i class="fac fa-facebook-official fa-lg"></i></a></li>
-            <li class="red"><a href="https://twitter.com/UNIONDETECNICOS" target="_blank"><i class="twi fa-twitter fa-lg"></i></a></li>
-        </div>
-	</nav>
-	<div id="contenedor"></div>
-
+			<div id="filtro">
+				<ul id="selFiltro">
+					<li class="opcion" id="filtra"><input type="checkbox" name="list" class="opcion" id="checkFiltra"><label for="checkFiltra">Filtrá por sección</label>
+						<ul class="interior">
+							<li class="opcion" id="todo">TODO</li>
+							<li class="opcion" id="sindicato">SINDICATO</li>
+							<li class="opcion" id="prensa">PRENSA</li>
+							<li class="opcion" id="afiliados">AFILIADOS</li>
+						</ul>
+					</li>	
+				</ul>
+			</div>
+			
+			<div id="redes"><ul class="nav navbar-nav">
+	            	<li class="red"><a href="https://www.facebook.com/utra.nacional?fref=ts" target="_blank"><i class="fac fa-facebook-official fa-lg"></i></a></li>
+	            	<li class="red"><a href="https://twitter.com/UNIONDETECNICOS" target="_blank"><i class="twi fa-twitter fa-lg"></i></a></li>
+				</ul>
+	        </div>
+		</nav>
+		<div id="contenedor"></div>
+	</div>
 </body>
 
 </html>
