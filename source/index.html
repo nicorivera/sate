@@ -16,10 +16,11 @@
     <!-- endbuild -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-js/1.2.0/sticky.min.js"></script>
 </head>
 <body>
-	<div class="container">
-		<nav>
+	<div class="container" data-sticky-container>
+		<nav id="stickyNav" data-margin-top="20" data-sticky-for="500" data-sticky-class="is-sticky">
 			<div class="logo">
 				<a href="#"><img src="img/logo_sate.png"></a>
 			</div>
@@ -49,6 +50,17 @@
 		</nav>
 		<div id="contenedor"></div>
 	</div>
+	<footer>
+		<div class="links">
+			<a href="#" class="botFoo">NOTICIAS</a>
+			<a href="#" class="botFoo">CAPACITACIÓN</a>
+			<a href="#" class="botFoo">MANUAL</a>
+			<a href="#" class="botFoo">SINDICATO</a>
+			<a href="#" class="botFoo">PRENSA</a>
+			<a href="#" class="botFoo">AFILIADOS</a>
+			<a href="#" class="botFoo">CONTACTO</a>
+		</div>
+	</footer>
 </body>
 
 </html>

@@ -10,6 +10,7 @@ $(function () {
     var OL = require('./ol');
     let ancho = $(".container").width(),
         notis;
+    var sticky = new Sticky('.sticky');
 
 
     let dataDrive = OL.getGdocUrlCdn("https://docs.google.com/spreadsheets/d/1auWKBVxPLjPVg71G9mugJqt4fDjWpuEFqk7r9lPcm44/edit#gid=0");
@@ -67,6 +68,7 @@ $(function () {
     }
 
     app.init();
+
 
 });
 

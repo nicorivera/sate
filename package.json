@@ -19,7 +19,8 @@
     "pre-commit": [],
     "homepage": "",
     "dependencies": {
-        "select2": "^4.0.6-rc.1"
+        "select2": "^4.0.6-rc.1",
+        "sticky-js": "^1.2.0"
     },
     "devDependencies": {
         "babel-cli": "^6.24.1",

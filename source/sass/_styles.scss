@@ -3,24 +3,39 @@
 
 body{
 	margin: auto;
+	border: none;
 }
 
 .container{
 
 	max-width: 1260px;
 
-	nav{
+	nav#stickyNav{
+		position: -webkit-sticky;
+	    position: sticky;
+	    position: -webkit-sticky;
+	    top: 0;
+	    padding: 5px 0;
+	    pointer-events: all;
+	    //height: 0;
+	    opacity: 1;
+	    transition: opacity .3s;
 		width: 100%;
 		max-width: 1260px;
 		height: 90px;
-		margin:auto;
-		padding: 5px 0;
+		margin: auto;
+		//margin-top: -101px;
+		//padding: 5px 0;
 		text-align: center;
+		//position: fixed;
+		background-color: #fff;
+		z-index: 1000;
 		
 		.logo{
-			width: 15%;
+			width: 10%;
 			display: inline-block;
 			vertical-align: middle;
+			text-align: left;
 
 			img{
 				width: 80px;		
@@ -48,7 +63,7 @@ body{
 		}
 		
 		ul#botones{
-			width: 50%;
+			width: 53%;
 			
 			li.bot{
 				width: calc(32% - 5px);
@@ -90,7 +105,7 @@ body{
 		}
 
 		#filtro{
-			width: 15%;
+			width: 17%;
 			height: 30px;
 			margin: auto;
 			display: inline-block;
@@ -186,6 +201,7 @@ body{
 
 			ul{
 				width: 100%;
+				text-align: right;
 
 				li.red{
 					margin-left: 5px;
@@ -225,6 +241,7 @@ body{
 		width: 100%;
 		max-width: 1260px;
 		margin: auto;
+		margin-top: 50px;
 
 		.noti{
 
@@ -251,6 +268,14 @@ body{
 				margin: 0 auto 20px;
 				text-align: left;
 				padding: 0;
+			}
+
+			.foto{
+				width: 100%;
+				margin: auto;
+				height: 250px;
+				border: 1px solid #dadada;
+				background-size: 105%;
 			}
 
 			.info{
@@ -305,6 +330,34 @@ body{
 	}
 }
 
+footer{
+	width: 100%;
+	height: 120px;
+	background-color: #438ec4;
+	text-align: center;
+	margin: 50px auto 0;
+
+	.links{
+		max-width: 1260px;
+		margin: auto;
+
+		a{
+			font-family: 'Arial', sans-serif;
+			font-size: 13px;
+			line-height: 24px;
+			color: #fff;
+			text-decoration: none;
+			border-bottom: 1px solid #438ec4;
+			display: inline-block;
+			margin: 10px 2%;
+			width: calc(10% - 5px);
+
+			&:hover{
+				border-bottom: 1px solid #fff;
+			}
+		}
+	}
+}
 
 
 #sindica{
@@ -441,12 +494,7 @@ body{
 	width: 50%;
 }
 
-.foto{
-	width: 100%;
-	margin: auto;
-	height: 200px;
-	border: 1px solid #dadada;
-}
+
 
 .fotoD{
 	width: 50%;
