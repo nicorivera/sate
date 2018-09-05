@@ -31,6 +31,7 @@ $(function () {
                     console.log("haaaaaaaaaaaaaa");
                     notis = data;
                     app.armaData(notis);
+                    app.armaSticky();
                 },
                 error: function(error, status) {
                     console.log("error", status);
@@ -64,6 +65,35 @@ $(function () {
             
                 $('#contenedor').append(aviso);
             }
+        },
+
+        armaSticky: function(){
+
+            $(document).ready(function() {
+                // grab the initial top offset of the navigation 
+                var stickyNavTop = $('#stickyNav').offset().top;
+                
+                // our function that decides weather the navigation bar should have "fixed" css position or not.
+                var stickyNav = function(){
+                    var scrollTop = $(window).scrollTop(); // our current vertical position from the top
+                         
+                    // if we've scrolled more than the navigation, change its position to fixed to stick to top,
+                    // otherwise change it back to relative
+                    if (scrollTop > stickyNavTop) { 
+                        $('#stickyNav').addClass('sticky');
+                        $('.logo img').attr("src", "img/logo_sticky.jpg")
+                    } else {
+                        $('#stickyNav').removeClass('sticky'); 
+                        $('.logo img').attr("src", "img/logo_sate.png")
+                    }
+                };
+
+                stickyNav();
+                // and run it again every time you scroll
+                $(window).scroll(function() {
+                    stickyNav();
+                });
+            });
         }
     }
 
