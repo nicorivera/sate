@@ -9,8 +9,9 @@ $(function () {
     /** Code! */
     var OL = require('./ol');
     let ancho = $(".container").width(),
-        notis;
-    var sticky = new Sticky('.sticky');
+        notis,
+        array_Secc = [];
+    // var sticky = new Sticky('.sticky');
 
 
     let dataDrive = OL.getGdocUrlCdn("https://docs.google.com/spreadsheets/d/1auWKBVxPLjPVg71G9mugJqt4fDjWpuEFqk7r9lPcm44/edit#gid=0");
@@ -51,12 +52,13 @@ $(function () {
                     fecha = notis[i].fecha,
                     autor = notis[i].autor,
                     etiqueta = notis[i].etiqueta,
+                    etiq_corto = etiqueta.replace(/[áéíóú\s\(\)\(.)\(+)\(,)/]/g, "").toLowerCase(),
                     seccion = notis[i].seccion,
                     texto = notis[i].texto;
 
                     console.log(etiqueta);
 
-                let aviso = '<div class="noti"><h2 class="titu">' + titulo + '</h2>';
+                let aviso = '<div class="noti '+ etiq_corto +'"><h2 class="titu">' + titulo + '</h2>';
                     aviso += '<h3 class="baja">' + bajada + '</h3>';
                     aviso += '<div class="foto ' + foto_tipo + '" style="background-image:url(img/'+ foto+')"></div>';
                     aviso += '<div class="info"><p class="fecha">'+ fecha +' | '+ autor+'</p><p class="etiqueta">'+etiqueta+'</p></div>';
@@ -65,6 +67,8 @@ $(function () {
             
                 $('#contenedor').append(aviso);
             }
+
+            app.selectSeccion(notis);
         },
 
         armaSticky: function(){
@@ -81,10 +85,10 @@ $(function () {
                     // otherwise change it back to relative
                     if (scrollTop > stickyNavTop) { 
                         $('#stickyNav').addClass('sticky');
-                        $('.logo img').attr("src", "img/logo_sticky.jpg")
+                        $('.logo img').attr("src", "img/logo_sticky.jpg").css("width", 100+"%");
                     } else {
                         $('#stickyNav').removeClass('sticky'); 
-                        $('.logo img').attr("src", "img/logo_sate.png")
+                        $('.logo img').attr("src", "img/logo_sate.png").css("width", 70+"%");
                     }
                 };
 
@@ -94,7 +98,77 @@ $(function () {
                     stickyNav();
                 });
             });
-        }
+        },
+
+        selectSeccion: function(notis) {
+
+            $("#selectSeccion").select2({
+                minimumResultsForSearch: Infinity,
+                placeholder: "Seleccioná"
+            });
+
+            //$("#selectSeccion").append('<option></option>');
+
+            var check = false;
+            for (let i = 0; i < notis.length; i++) {
+
+                check = false;
+
+                let selEtiqueta = notis[i].etiqueta;
+                let etiq_corto = selEtiqueta.replace(/[áéíóú\s\(\)\(.)\(+)\(,)/]/g, "").toLowerCase();
+
+                if(etiq_corto == ""){
+                    etiq_corto = "sinDatos";
+                }
+
+                for (let e = 0; e < array_Secc.length; e++) { // check si ya existe la referencia en el array
+
+                    if (array_Secc[e] == etiq_corto) {
+                        check = true;
+                    }
+
+                }
+
+                if (check == false) {
+                    array_Secc.push(etiq_corto);
+                    if(etiq_corto != "sinDatos"){
+                        $("#selectSeccion").append('<option value="' +etiq_corto+ '">' + selEtiqueta + '</option>');
+                    }
+                }
+
+                let valor = "";
+
+                $("#selectSeccion").on("change", function(){
+                    valor = this.value;
+                    console.log(valor);
+                    filtraSelect();
+                });
+
+                function filtraSelect(){
+
+                    // let selEtiqueta = notis[i].etiqueta;
+                    // let etiq_corto = selEtiqueta.replace(/[áéíóú\s\(\)\(.)\(+)\(,)/]/g, "").toLowerCase();
+
+                    if(valor == "secciones"){
+                        $(".noti").css("display", "inline-block");
+                        console.log("1", valor, etiq_corto);
+                    }else if(valor == etiq_corto){
+                        console.log("2", valor, etiq_corto);
+                        //$(".noti").css("display", "none");
+                        $(".noti ."+etiq_corto).css("display", "inline-block");
+                    }else{
+                        console.log("3", valor, etiq_corto);
+                        //$(".noti ."+etiq_corto).css("display", "none");
+                    }
+                }
+            } // termina for spreadhseeht
+
+            //$("#selectSeccion").append('<option value="sinDatos">Sin Datos</option>');
+
+            //console.log(array_Secc);
+
+
+        },
     }
 
     app.init();

@@ -16,11 +16,11 @@
     <!-- endbuild -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-js/1.2.0/sticky.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-js/1.2.0/sticky.min.js"></script> -->
 </head>
 <body>
-	<div class="container" data-sticky-container>
-		<nav id="stickyNav" data-margin-top="100" data-sticky-for="500" data-sticky-class="is-sticky">
+	<div class="container">
+		<nav id="stickyNav">
 			<div class="logo">
 				<a href="#"><img class="seVe" src="img/logo_sate.png"><img class="noSeVe" src="img/logo_sticky.jpg"></a>
 			</div>
@@ -29,7 +29,7 @@
 				<li class="bot" id="capacitacion"><a href="#">CAPACITACIÓN</a></li>
 				<li class="bot" id="manual"><a href="#">MANUAL</a></li>
 			</ul>
-			<div id="filtro">
+			<!-- <div id="filtro">
 				<ul id="selFiltro">
 					<li class="opcion" id="filtra"><input type="checkbox" name="list" class="opcion" id="checkFiltra"><label for="checkFiltra">Filtrá por sección</label>
 						<ul class="interior">
@@ -40,7 +40,14 @@
 						</ul>
 					</li>	
 				</ul>
-			</div>
+			</div> -->
+
+			<div id="selSecc">
+	            <select id="selectSeccion" class="select">
+	                <!-- <option value=""></option> -->
+	                <option value="secciones">Todos</option>
+	            </select>
+	        </div>
 			
 			<div id="redes"><ul class="nav navbar-nav">
 	            	<li class="red"><a href="https://www.facebook.com/utra.nacional?fref=ts" target="_blank"><i class="fac fa-facebook-official fa-lg"></i></a></li>
