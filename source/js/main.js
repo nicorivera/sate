@@ -50,22 +50,45 @@ $(function () {
                     foto_tipo = notis[i].foto_tipo,
                     foto = notis[i].foto,
                     fecha = notis[i].fecha,
+                    destacado = notis[i].destacado,
                     autor = notis[i].autor,
                     etiqueta = notis[i].etiqueta,
                     etiq_corto = etiqueta.replace(/[áéíóú\s\(\)\(.)\(+)\(,)/]/g, "").toLowerCase(),
                     seccion = notis[i].seccion,
                     texto = notis[i].texto;
 
-                    console.log(etiqueta);
+                    console.log(destacado);
 
-                let aviso = '<div class="noti '+ etiq_corto +'"><h2 class="titu">' + titulo + '</h2>';
-                    aviso += '<h3 class="baja">' + bajada + '</h3>';
-                    aviso += '<div class="foto ' + foto_tipo + '" style="background-image:url(img/'+ foto+')"></div>';
-                    aviso += '<div class="info"><p class="fecha">'+ fecha +' | '+ autor+'</p><p class="etiqueta">'+etiqueta+'</p></div>';
-                    aviso += '<div class="notiTex"><p class="tex">'+ texto +'</p></div>';
-                    aviso += '</div>';
-            
+                if(destacado == "si"){
+                    if(foto_tipo == "gra"){
+                        let aviso = '<div class="noti '+ etiq_corto +' destacado"><h2 class="titu">' + titulo + '</h2>';
+                            aviso += '<h3 class="baja">' + bajada + '</h3>';
+                            aviso += '<div class="foto ' + foto_tipo + '" style="background-image:url(img/'+ foto+')"></div>';
+                            aviso += '<div class="info"><p class="fecha">'+ fecha +' | '+ autor+'</p><p class="etiqueta">'+etiqueta+'</p></div>';
+                            aviso += '<div class="notiTex"><p class="tex">'+ texto +'</p></div>';
+                            aviso += '</div>';
                 $('#contenedor').append(aviso);
+                        }else if(foto_tipo == "chi"){
+                            let aviso = '<div class="noti '+ etiq_corto +' destacaChico"><h2 class="titu">' + titulo + '</h2>';
+                                aviso += '<h3 class="baja">' + bajada + '</h3>';
+                                aviso += '<div class="foto ' + foto_tipo + '" style="background-image:url(img/'+ foto+')"></div>';
+                                aviso += '<div class="info"><p class="fecha">'+ fecha +' | '+ autor+'</p><p class="etiqueta">'+etiqueta+'</p></div>';
+                                aviso += '<div class="notiTex"><p class="tex">'+ texto +'</p></div>';
+                                aviso += '</div>';
+                $('#contenedor').append(aviso);
+                        }
+                }else{
+                    let aviso = '<div class="noti '+ etiq_corto +'"><h2 class="titu">' + titulo + '</h2>';
+                        aviso += '<h3 class="baja">' + bajada + '</h3>';
+                        aviso += '<div class="foto ' + foto_tipo + '" style="background-image:url(img/'+ foto+')"></div>';
+                        aviso += '<div class="info"><p class="fecha">'+ fecha +' | '+ autor+'</p><p class="etiqueta">'+etiqueta+'</p></div>';
+                        aviso += '<div class="notiTex"><p class="tex">'+ texto +'</p></div>';
+                        aviso += '</div>';
+                $('#contenedor').append(aviso);
+                }
+                    
+            
+
             }
 
             app.selectSeccion(notis);
@@ -140,7 +163,6 @@ $(function () {
 
                 $("#selectSeccion").on("change", function(){
                     valor = this.value;
-                    console.log(valor);
                     filtraSelect();
                 });
 
@@ -148,17 +170,15 @@ $(function () {
 
                     // let selEtiqueta = notis[i].etiqueta;
                     // let etiq_corto = selEtiqueta.replace(/[áéíóú\s\(\)\(.)\(+)\(,)/]/g, "").toLowerCase();
+                        $(".noti").css("display", "none");
 
                     if(valor == "secciones"){
                         $(".noti").css("display", "inline-block");
-                        console.log("1", valor, etiq_corto);
                     }else if(valor == etiq_corto){
-                        console.log("2", valor, etiq_corto);
-                        //$(".noti").css("display", "none");
                         $(".noti ."+etiq_corto).css("display", "inline-block");
                     }else{
-                        console.log("3", valor, etiq_corto);
-                        //$(".noti ."+etiq_corto).css("display", "none");
+                        console.log("nooooo", valor, etiq_corto);
+                        $(".noti ."+etiq_corto).css("display", "none");
                     }
                 }
             } // termina for spreadhseeht

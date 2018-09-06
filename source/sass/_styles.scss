@@ -278,6 +278,16 @@ body{
 			vertical-align: top;
 			border-bottom: 1px solid #dadada;
 
+			&.destacado{
+				width: 100%;
+				display: block;
+				margin: auto;
+			}
+
+			&.destacaChico{
+				border: 1px solid #000;
+			}
+
 			h2.titu{
 				font-family: 'Arial', sans-serif;
 				font-size: 28px;
@@ -297,7 +307,7 @@ body{
 			}
 
 			.foto{
-				width: 100%;
+				width: 99%;
 				margin: auto;
 				height: 250px;
 				border: 1px solid #dadada;
