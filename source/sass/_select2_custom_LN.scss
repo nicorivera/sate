@@ -1,4 +1,8 @@
-
+select{
+    &:hover{
+        color: #438ec4;
+    }
+}
 .select2-container {
     margin-right: 10px;
     text-align: left;
@@ -6,13 +10,16 @@
 
 .select2-container--default .select2-selection--single .select2-selection__rendered{
     font-family: 'Arial', sans-serif;
-    color:#438ec4;
+    color:#000;
     font-size: 15px;
     text-transform: uppercase;
     text-align: center;
     // line-height: 32px;
     // padding-left: 20px;
     // padding-right: 30px;
+    &:hover{
+        color: #438ec4;
+    }
 
 }
 
@@ -82,17 +89,26 @@
 }
 
 .select2-container--default.select2-container--focus .select2-selection--multiple {
-    border: solid #0084b4 1px;
+    border: solid #438ec4 1px;
     outline: 0;
-        overflow: hidden;
+    overflow: hidden;
 }
 
 .select2-results__option {
-    padding: 9px 6px;
-    color: #0084b4;
+    padding: 8px 25px 8px 10px;
+    color: #438ec4;
     font-family: Arial;
     font-size: 13px;
-    text-align: center;
+    text-align: left;
+    margin-left: -10px;
+    background-color: #fff;
+    text-transform: uppercase;
+    border-bottom: 1px solid #fff;
+    cursor: pointer;
+
+    &:first-child{
+        margin-top: 8px;
+    }
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice{
@@ -103,4 +119,37 @@
 
 .select2-search__field{
     display: none;
+}
+
+.select2-container.select2-container--default.select2-container--open{
+    z-index: 100000;
+}
+.select2-results__option.select2-results__option--highlighted{
+    border-bottom: 1px solid #438ec4;
+    //color: #fff;
+}
+.select2.select2-container.select2-container--default{
+    color: #000;
+    position: relative;
+
+    &:after{
+        content:"";
+        width: 40px;
+        height: 30px;
+        position: absolute;
+        top: -5px;
+        right: -35px;
+        background-repeat: no-repeat;
+        background-image: url("../img/sprite.svg");
+        background-position: left -2px;
+        background-size: 200%;
+    }
+    &:hover{
+        color: #438ec4 !important;
+        //border-bottom: 1px solid red;
+
+        &:after{
+            background-position: right -2px;
+        }
+    }
 }
