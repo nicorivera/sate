@@ -20,39 +20,40 @@ select{
 	display: none;
 }
 
-.container{
+nav#stickyNav{
+	position: -webkit-sticky;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 10px;
+    padding: 5px 0;
+    pointer-events: all;
+    //height: 0;
+    opacity: 1;
+    transition: opacity .3s;
+	width: 100%;
+	//max-width: 1260px;
+	height: 100px;
+	margin: auto;
+	//margin-top: -101px;
+	//padding: 5px 0;
+	text-align: center;
+	//position: fixed;
+	background-color: #fff;
+	z-index: 1000;
 
-	max-width: 1260px;
-
-	nav#stickyNav{
-		position: -webkit-sticky;
-	    position: sticky;
-	    position: -webkit-sticky;
-	    top: 10px;
-	    padding: 5px 0;
-	    pointer-events: all;
-	    //height: 0;
-	    opacity: 1;
-	    transition: opacity .3s;
+	&.sticky {
+		position: fixed;
 		width: 100%;
-		max-width: 1260px;
-		height: 100px;
-		margin: auto;
-		//margin-top: -101px;
-		//padding: 5px 0;
-		text-align: center;
-		//position: fixed;
-		background-color: #fff;
-		z-index: 1000;
+		top: 0;
+		z-index: 100;
+		height: 60px;
+		padding-top: 10px;
+		border-bottom: 1px solid #000;
+	}
 
-		&.sticky {
-			position: fixed;
-			width: 100%;
-			top: 0;
-			z-index: 100;
-			height: 60px;
-			padding-top: 10px;
-		}
+	.cont{
+		max-width: 1260px;
+		margin: auto;
 
 		#selSecc{
 			display: inline-block;
@@ -122,101 +123,112 @@ select{
 					&:hover{
 						color: #438ec4;
 					}
-
-
 				}
-				&:active, &:visited{
+
+				&.active{
 					color: #fff;
 					background-color: #438ec4;
+
+					a{
+						color: #fff;
+
+						&:link, &:visited{
+							color: #fff;
+						}
+
+						&:hover{
+							color: #fff;
+						}
+					}
 				}
 			}	
 		}
 
-		#filtro{
-			width: 17%;
-			height: 30px;
-			margin: auto;
-			display: inline-block;
-			vertical-align: middle;
-			text-align: left;
-		    line-height: 27px;
+		// #filtro{
+		// 	width: 17%;
+		// 	height: 30px;
+		// 	margin: auto;
+		// 	display: inline-block;
+		// 	vertical-align: middle;
+		// 	text-align: left;
+		//     line-height: 27px;
 
-		    ul#selFiltro{
-		    	width: 100%;
-		    	height: 30px;
-				margin: auto;
-				vertical-align: middle;
-				position: relative;
-				cursor: pointer;
-				padding-left: 5px;
+		//     ul#selFiltro{
+		//     	width: 100%;
+		//     	height: 30px;
+		// 		margin: auto;
+		// 		vertical-align: middle;
+		// 		position: relative;
+		// 		cursor: pointer;
+		// 		padding-left: 5px;
 				
-				.interior{
-					display: none;
-					// li &:hover{
-					// 	color: #438ec4;
-					// 	border-bottom: 1px solid #438ec4;
-					// }
-				} /* oculta las listas anidadas */
-				input[name="list"] {
-					position: absolute;
-					left: -1000em;
-				}
-				input:checked ~ ul{
-					display: block;
+		// 		.interior{
+		// 			display: none;
+		// 			// li &:hover{
+		// 			// 	color: #438ec4;
+		// 			// 	border-bottom: 1px solid #438ec4;
+		// 			// }
+		// 		} /* oculta las listas anidadas */
+		// 		input[name="list"] {
+		// 			position: absolute;
+		// 			left: -1000em;
+		// 		}
+		// 		input:checked ~ ul{
+		// 			display: block;
 
-				}
+		// 		}
 
-				li.opcion{
-					width: 100%;
-					list-style: none;
-					font-size: 14px;
-					text-transform: uppercase;
-					text-align: left;
-					cursor: pointer;
-					border-bottom: 1px solid #fff;
-					background-color: #fff;
-					padding-left: 15px;
-					margin-left: -15px;
+		// 		li.opcion{
+		// 			width: 100%;
+		// 			list-style: none;
+		// 			font-size: 14px;
+		// 			text-transform: uppercase;
+		// 			text-align: left;
+		// 			cursor: pointer;
+		// 			border-bottom: 1px solid #fff;
+		// 			background-color: #fff;
+		// 			padding-left: 15px;
+		// 			margin-left: -15px;
 
-					&:hover{
-						//color: #438ec4;
-						border-bottom: 1px solid #438ec4;
-					}
+		// 			&:hover{
+		// 				//color: #438ec4;
+		// 				border-bottom: 1px solid #438ec4;
+		// 			}
 
-					&#filtra{
-						border-bottom: 1px solid #fff;
-						height: 30px;
+		// 			&#filtra{
+		// 				border-bottom: 1px solid #fff;
+		// 				height: 30px;
 
-						&:after{
-					        content:"";
-					        width: 40px;
-					        height: 30px;
-					        position: absolute;
-					        top: 0;
-					        right: -5px;
-			    			background-repeat: no-repeat;
-					        background-image: url("../img/sprite.svg");
-					        background-position: left -2px;
-			    			background-size: 200%;
-					    }
-						&:hover{
-							//color: #438ec4;
-							border-bottom: 1px solid #438ec4;
+		// 				&:after{
+		// 			        content:"";
+		// 			        width: 40px;
+		// 			        height: 30px;
+		// 			        position: absolute;
+		// 			        top: 0;
+		// 			        right: -5px;
+		// 	    			background-repeat: no-repeat;
+		// 			        background-image: url("../img/sprite.svg");
+		// 			        background-position: left -2px;
+		// 	    			background-size: 200%;
+		// 			    }
+		// 				&:hover{
+		// 					//color: #438ec4;
+		// 					border-bottom: 1px solid #438ec4;
 
-							&:after{
-						        background-position: right -2px;
-						    }
-						}
-					}
+		// 					&:after{
+		// 				        background-position: right -2px;
+		// 				    }
+		// 				}
+		// 			}
 
-					&#todo{
-						margin-top: 5px;
-					}
-				}
+		// 			&#todo{
+		// 				margin-top: 5px;
+		// 			}
+		// 		}
 			    
-		    }
+		//     }
 
-		}
+		// }
 
 		a{
 			margin: auto;
@@ -265,13 +277,20 @@ select{
 			}
 		}
 	}
+}
 
-	#contenedor, #destacados{
+.container{
+
+	max-width: 1260px;
+
+
+	#contenedor, #destacados, #conteManual, #conteCapaci{
 
 		width: 100%;
 		max-width: 1260px;
 		margin: auto;
 		margin-top: 50px;
+		transition: all .5s ease-in;
 
 		.noti{
 
@@ -369,14 +388,40 @@ select{
 
 		
 	}
-	#destacados{
+	#destacados, #conteManual{
 		width: 95%;
+		transition: all .5s ease-in;
 
 		.noti{
 			.foto, h3.baja, h2.titu{
 				width: 95%;
 			}
 		}
+	}
+
+	#conteManual{
+		display: none;
+		width: 95%;
+		//height: 1000px;
+		background-color: #fff;
+		transition: all .5s ease-in;
+
+		iframe{
+			margin: 50px auto;
+		}
+	}
+
+	#conteCapaci{
+		display: none;
+		height: 1000px;
+		background-color: green;
+		transition: all .5s ease-in;
+	}
+	#conteNoti{
+		display: none;
+		height: 1000px;
+		background-color: blue;
+		transition: all .5s ease-in;
 	}
 }
 

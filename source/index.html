@@ -19,8 +19,8 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-js/1.2.0/sticky.min.js"></script> -->
 </head>
 <body>
-	<div class="container">
-		<nav id="stickyNav">
+	<nav id="stickyNav">
+		<div class="cont">
 			<div class="logo">
 				<a href="#"><img class="seVe" src="img/logo_sate.png"><img class="noSeVe" src="img/logo_sticky.jpg"></a>
 			</div>
@@ -29,22 +29,11 @@
 				<li class="bot" id="capacitacion"><a href="#">CAPACITACIÓN</a></li>
 				<li class="bot" id="noticias"><a href="#">NOTICIAS</a></li>
 			</ul>
-			<!-- <div id="filtro">
-				<ul id="selFiltro">
-					<li class="opcion" id="filtra"><input type="checkbox" name="list" class="opcion" id="checkFiltra"><label for="checkFiltra">Filtrá por sección</label>
-						<ul class="interior">
-							<li class="opcion" id="todo">TODO</li>
-							<li class="opcion" id="sindicato">SINDICATO</li>
-							<li class="opcion" id="prensa">PRENSA</li>
-							<li class="opcion" id="afiliados">AFILIADOS</li>
-						</ul>
-					</li>	
-				</ul>
-			</div> -->
 
 			<div id="selSecc">
 	            <select id="selectSeccion" class="select">
 	                <!-- <option value=""></option> -->
+	                <option selected disabled value="0">Filtrá por sección</option>
 	                <option value="secciones">Todos</option>
 	            </select>
 	        </div>
@@ -54,9 +43,38 @@
 	            	<li class="red"><a href="https://twitter.com/UNIONDETECNICOS" target="_blank"><i class="twi fa-twitter fa-lg"></i></a></li>
 				</ul>
 	        </div>
-		</nav>
+	    </div>
+	</nav>
+	<div class="container">
+		<div id="tree"></div>
 		<div id="destacados"></div>
 		<div id="contenedor"></div>
+		<div id="conteManual">
+			<div class="noti destacado">
+				<h2 class="titu">Documental: Prevención de Riesgos Escénicos por CM - El Canal de la Música</h2>
+	          	<div class="notiTex">
+		          	<p class="tex">El 1 de enero de 2018 se presentó el documental realizado junto a INAMU en CM - El canal de la música.<br>
+		          	Prevención de Riesgos Escénicos, un audiovisual con entrevistas e información sobre optimización de circuitos eléctricos, seguridad general y condiciones de protección necesarias para prevenir accidentes en los escenarios.</p>
+		          	<iframe width="80%" height="350px" src="https://www.youtube.com/embed/h5i4nhrEmvM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe><br>
+		          	<p class="tex">Secretaría de prensa y difusión</p>
+		        </div>
+	        </div>
+	        <div class="noti destacado">
+				<h2 class="titu">Seguimos presentando el "Manual de prevención de riesgos escénicos" junto a INAMU</h2>
+	          	<div class="notiTex">
+		          	<p class="tex">Acompañanos en las provincias de Río Negro, Santa Fé y Entre Ríos.</p><br>
+					<p class="tex">"La música no es peligrosa" son las condiciones riesgosas en las que a veces se desarrolla.</p><br>
+					<p class="tex">Nuestro Secretario General, Gerardo "Pati" Bacalini junto a Gabriel Soriano y Diego Boris, presidente de INAMU estuvieron junto a músicos, técnicos y productores por más escenarios y lugares seguros en todo el pais.</p>
+
+					<img src="img/manual/presentacion_manual.jpg">
+		          	
+		          	<p class="tex">Acompañá y apoyá a tu asociación sindical. Seguí todas las actividades en <a href="https://www.facebook.com/SATE.nacional" target="_blank">Facebook</a> y <a href="https://twitter.com/SATE_oficial" target="_blank">Twitter</a>.</p>
+		          	<p class="tex">Secretaría de prensa y difusión</p>
+		        </div>
+	        </div>
+		</div>
+		<div id="conteCapaci"></div>
+		<div id="conteNoti"></div>
 	</div>
 	<footer>
 		<div class="links">

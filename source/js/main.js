@@ -33,6 +33,7 @@ $(function () {
                     notis = data;
                     app.armaData(notis);
                     app.armaSticky();
+                    app.cambiaBotones();
                 },
                 error: function(error, status) {
                     console.log("error", status);
@@ -189,6 +190,37 @@ $(function () {
 
 
         },
+
+        cambiaBotones: function(){
+            let botManual = $("#stickyNav .cont #botones #manual"),
+                botCapaci = $("#stickyNav .cont #botones #capacitacion"),
+                botNoti = $("#stickyNav .cont #botones #noticias");
+
+            botManual.on("click", function(){
+                $("#conteManual").css("transition", "all .5s ease-in").css("display", "block");
+                $("#destacados, #contenedor, #conteNoti, #conteCapaci").css("transition", "all .5s ease-in").css("display", "none");
+                $("#selSecc").css("transition", "all .5s ease-in").css("opacity", 0);
+                botManual.addClass("active");
+                botCapaci.removeClass("active");
+                botNoti.removeClass("active");
+            });
+            botCapaci.on("click", function(){
+                $("#conteCapaci").css("transition", "all .5s ease-in").css("display", "block");
+                $("#destacados, #contenedor, #conteNoti, #conteManual").css("transition", "all .5s ease-in").css("display", "none");
+                $("#selSecc").css("transition", "all .5s ease-in").css("opacity", 0);
+                botManual.removeClass("active");
+                botCapaci.addClass("active");
+                botNoti.removeClass("active");
+            });
+            botNoti.on("click", function(){
+                $("#destacados, #contenedor").css("transition", "all .5s ease-in").css("display", "block");
+                $("#conteCapaci, #conteManual, #conteNoti").css("transition", "all .5s ease-in").css("display", "none");
+                $("#selSecc").css("transition", "all .5s ease-in").css("opacity", 1);
+                botManual.removeClass("active");
+                botCapaci.removeClass("active");
+                botNoti.addClass("active");
+            });
+        }
     }
 
     app.init();
