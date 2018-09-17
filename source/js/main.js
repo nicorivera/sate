@@ -10,11 +10,13 @@ $(function () {
     var OL = require('./ol');
     let ancho = $(".container").width(),
         notis,
+        capac,
         array_Secc = [];
     // var sticky = new Sticky('.sticky');
 
 
     let dataDrive = OL.getGdocUrlCdn("https://docs.google.com/spreadsheets/d/1auWKBVxPLjPVg71G9mugJqt4fDjWpuEFqk7r9lPcm44/edit#gid=0");
+    let dataCapac = OL.getGdocUrlCdn("https://docs.google.com/spreadsheets/d/1auWKBVxPLjPVg71G9mugJqt4fDjWpuEFqk7r9lPcm44/edit#gid=719992898");
     //let dataDrive = "https://docs.google.com/spreadsheets/d/1auWKBVxPLjPVg71G9mugJqt4fDjWpuEFqk7r9lPcm44/edit#gid=0";
     //let dataDrive = "https://docs.google.com/spreadsheets/d/1KqGmwFI_-3GfdNdpT-iKHiKHU2GUqQL-eYC63hMs_M0/edit#gid=0";
 
@@ -38,7 +40,23 @@ $(function () {
                 error: function(error, status) {
                     console.log("error", status);
                 }
-            });
+            })
+
+            $.ajax({
+
+                type: "GET",
+                url: dataCapac,
+                dataType: "json",
+
+                success: function(data){
+                    console.log("haaaaaaaaaaaaaa");
+                    capac = data;
+                    app.armaCapac(capac);
+                },
+                error: function(error, status) {
+                    console.log("error", status);
+                }
+            })
         },
 
         armaData: function(notis){
@@ -90,6 +108,35 @@ $(function () {
             }
 
             app.selectSeccion(notis);
+        },
+
+        armaCapac: function(capac){
+            for (var i = 0; i < capac.length; i++) {
+
+                let titulo = capac[i].titulo,
+                    lugar = capac[i].lugar,
+                    fecha = capac[i].fecha,
+                    foto = capac[i].foto,
+                    texto = capac[i].texto,
+                    destacado = capac[i].destacado;
+
+                if(destacado == "si"){
+                    let capacita = '<div class="capac destacado"><h2 class="titu">' + titulo + '</h2>';
+                        capacita += '<div class="infoCapac"><p class="lugar">' + lugar + '</p><p class="fechaCapac">' + fecha + '</p></div>';
+                        capacita += '<div class="foto" style="background-image:url(img/capac/'+ foto+')"></div>';
+                        capacita += '<div class="capacTex"><p class="tex">'+ texto +'</p></div>';
+                        capacita += '</div>';
+                    $('#destaCapac').append(capacita);
+                }else{
+                    let capacita = '<div class="capac"><h2 class="titu">' + titulo + '</h2>';
+                        capacita += '<div class="infoCapac"><p class="lugar">' + lugar + '</p><p class="fechaCapac">' + fecha + '</p></div>';
+                        capacita += '<div class="foto" style="background-image:url(img/capac/'+ foto+')"></div>';
+                        capacita += '<div class="capacTex"><p class="tex">'+ texto +'</p></div>';
+                        capacita += '</div>';
+                    $('#notiCapac').append(capacita);
+                }
+
+            }
         },
 
         armaSticky: function(){
