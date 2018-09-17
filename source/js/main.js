@@ -118,17 +118,20 @@ $(function () {
                     fecha = capac[i].fecha,
                     foto = capac[i].foto,
                     texto = capac[i].texto,
+                    etiqCapac = capac[i].etiqueta,
                     destacado = capac[i].destacado;
 
                 if(destacado == "si"){
-                    let capacita = '<div class="capac destacado"><h2 class="titu">' + titulo + '</h2>';
+                    let capacita = '<div class="capac destacado"><div class="etiqCapac">'+ etiqCapac +'</div>';
+                        capacita += '<h2 class="titu">' + titulo + '</h2>';
                         capacita += '<div class="infoCapac"><p class="lugar">' + lugar + '</p><p class="fechaCapac">' + fecha + '</p></div>';
                         capacita += '<div class="foto" style="background-image:url(img/capac/'+ foto+')"></div>';
                         capacita += '<div class="capacTex"><p class="tex">'+ texto +'</p></div>';
                         capacita += '</div>';
                     $('#destaCapac').append(capacita);
                 }else{
-                    let capacita = '<div class="capac"><h2 class="titu">' + titulo + '</h2>';
+                    let capacita = '<div class="capac"><div class="etiqCapac">'+ etiqCapac +'</div>';
+                        capacita += '<h2 class="titu">' + titulo + '</h2>';
                         capacita += '<div class="infoCapac"><p class="lugar">' + lugar + '</p><p class="fechaCapac">' + fecha + '</p></div>';
                         capacita += '<div class="foto" style="background-image:url(img/capac/'+ foto+')"></div>';
                         capacita += '<div class="capacTex"><p class="tex">'+ texto +'</p></div>';
