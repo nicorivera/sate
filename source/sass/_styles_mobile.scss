@@ -1,4 +1,64 @@
-@media screen and (max-width: 640px) { // NOTA
+@media screen and (max-width: 650px) { // NOTA
+
+	.container{
+		#contenedor, #destacados, #conteManual, #conteCapaci, #destaCapac, #notiCapac{
+			.noti, .capac{
+				width: 95%;
+				display: block;
+
+				&.destacado{
+					width: 100%;
+					
+					h2.titu{
+					    background-color: #438ec4;
+					    color: #fff;
+					    padding: 5px;
+					}
+				}
+			}
+			.capac{
+				&.destacado{
+					.foto{
+						width: 95%;
+						margin: auto;
+						height: 250px;
+						display: block;
+					}
+					.capacTex{
+						width: 95%;
+						margin: 15px auto;
+						display: block;
+					}
+				}
+
+				h2.titu{
+					font-size: 23px;
+					line-height: 25px;
+				}
+			}
+		}
+		#contenedor{
+			width: 95%;
+		}
+
+		#conteManual{
+			iframe, img{
+				width: 97%;
+				margin: 50px 1%;
+			}
+		}
+	}
+
+	footer{
+		.links{
+			a.botFoo{
+				font-size: 12px;
+				line-height: 12px;
+				width: calc(28% - 10px);
+			}
+		}
+	}
+	    
 
 } // end NOTA
 
@@ -9,6 +69,44 @@
 
 
 @media screen and (max-width: 414px) { // iphone 6 plus portrait
+
+	.container{
+		#contenedor, #destacados, #conteManual, #conteCapaci, #destaCapac, #notiCapac{
+			.noti, .capac{
+				&.destacado{
+					h2.titu{
+					    font-size: 24px;
+					    line-height: 27px;
+					    margin: 10px auto;
+					}
+				}
+				.info{
+					p{
+						font-size: 13px;
+						line-height: 26px;
+
+						&.fecha{
+							height: 25px;
+						}
+						&.etiqueta{
+							width: 125px;
+							height: 25px;
+						}
+					}
+				}
+
+				.notiTex, .capacTex{
+					.tex{
+						line-height: 20px;
+						font-size: 15px;
+					}
+				}
+			}
+		}
+		#contenedor{
+			width: 95%;
+		}
+	}
 
 } // end iphone 6 plus
 
