@@ -244,7 +244,8 @@ $(function () {
         cambiaBotones: function(){
             let botManual = $("#stickyNav .cont #botones #manual"),
                 botCapaci = $("#stickyNav .cont #botones #capacitacion"),
-                botNoti = $("#stickyNav .cont #botones #noticias");
+                botNoti = $("#stickyNav .cont #botones #noticias"),
+                botHambur = $("#stickyNav .cont #hambur");
 
             botManual.on("click", function(){
                 $("#conteManual").css("transition", "all .5s ease-in").css("display", "block");
@@ -270,6 +271,11 @@ $(function () {
                 botCapaci.removeClass("active");
                 botNoti.addClass("active");
             });
+
+            botHambur.on("click", function(){
+                $("#botones").css("transition", "all .5s ease-in").css("opacity", 1).toggle("opacityUno opacityCero");
+            })
+
         }
     }
 

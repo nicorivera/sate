@@ -1,5 +1,48 @@
 @media screen and (max-width: 650px) { // NOTA
 
+	nav#stickyNav{
+		.cont{
+
+			.logo{
+				width: 15%;
+			}
+
+			#hambur{
+				width: 40px;
+				height: 40px;
+				background-image: url("../img/sprite.svg");
+				background-position: -5px bottom;
+				display: inline-block;
+				cursor: pointer;
+			    vertical-align: middle;
+			    background-size: 250%;
+			}
+
+			ul#botones{
+				width: 52%;
+				opacity: 0;
+
+				li.bot{
+					width: 90%;
+				    font-size: 15px;
+				    display: block;
+				    text-align: left;
+				    padding-left: 10px;
+				}
+			}
+
+			#redes{
+				width: 17%;
+				ul{
+					text-align: left;
+				}
+			}
+
+			#selSecc{
+				display: none;
+			}
+		}
+	}
 	.container{
 		#contenedor, #destacados, #conteManual, #conteCapaci, #destaCapac, #notiCapac{
 			.noti, .capac{

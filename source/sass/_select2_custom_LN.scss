@@ -13,7 +13,7 @@ select{
 .select2-container--default .select2-selection--single .select2-selection__rendered{
     font-family: 'Arial', sans-serif;
     color:#000;
-    font-size: 15px;
+    font-size: 13px;
     text-transform: uppercase;
     text-align: center;
     // line-height: 32px;
@@ -21,6 +21,10 @@ select{
     // padding-right: 30px;
     &:hover{
         color: #438ec4;
+    }
+
+    @media (max-width: 770px) {
+        font-size: 11px;
     }
 
 }
@@ -147,6 +151,12 @@ select{
         background-image: url("../img/sprite.svg");
         background-position: left -2px;
         background-size: 200%;
+
+        @media (max-width: 770px) {
+            width: 30px;
+            top: 0px;
+            right: -25px;
+        }
     }
     &:hover{
         color: #438ec4 !important;
