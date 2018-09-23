@@ -113,56 +113,61 @@ nav#stickyNav{
 			vertical-align: middle;
 		}
 		
-		ul#botones{
+		.menu{
+			display: inline-block;
 			width: 53%;
-			
-			li.bot{
-				width: calc(31% - 5px);
-				height: 30px;
-				font-weight: 400;
-				font-size: 15px;
-				//color: #438ec4;
-				//color: #000;
-				list-style: none;
-				display: inline-block;
-				//padding: 7px 0;
-				margin: auto;
-				text-align: center;
-				cursor: pointer;
-				vertical-align: middle;
 
-				a{
-					color: #000;
-					height: 20px;
-					text-decoration: none;
-					line-height: 30px;
-
-					&:link, &:visited{
-						color: #000;
-					}
-
-					&:hover{
-						color: #438ec4;
-					}
-				}
-
-				&.active{
-					color: #fff;
-					background-color: #438ec4;
+			ul#botones{
+				width: 100%;
+				
+				li.bot{
+					width: calc(31% - 5px);
+					height: 30px;
+					font-weight: 400;
+					font-size: 15px;
+					//color: #438ec4;
+					//color: #000;
+					list-style: none;
+					display: inline-block;
+					//padding: 7px 0;
+					margin: auto;
+					text-align: center;
+					cursor: pointer;
+					vertical-align: middle;
 
 					a{
-						color: #fff;
+						color: #000;
+						height: 20px;
+						text-decoration: none;
+						line-height: 30px;
 
 						&:link, &:visited{
-							color: #fff;
+							color: #000;
 						}
 
 						&:hover{
-							color: #fff;
+							color: #438ec4;
 						}
 					}
-				}
-			}	
+
+					&.active{
+						color: #fff;
+						background-color: #438ec4;
+
+						a{
+							color: #fff;
+
+							&:link, &:visited{
+								color: #fff;
+							}
+
+							&:hover{
+								color: #fff;
+							}
+						}
+					}
+				}	
+			}
 		}
 
 		#hambur{
