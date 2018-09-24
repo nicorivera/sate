@@ -9,12 +9,15 @@
 			.logo{
 				width: 13%;
 			}
-			ul#botones{
+
+			.menu{
 				width: 45%;
-    			text-align: left;
-				li.bot{
-					width: calc(32% - 5px);
-					font-size: 14px;
+				ul#botones{
+	    			text-align: left;
+					li.bot{
+						width: calc(32% - 5px);
+						font-size: 14px;
+					}
 				}
 			}
 

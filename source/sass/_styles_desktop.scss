@@ -11,5 +11,26 @@
 
 @media (max-width: 850px) {
 
+	nav#stickyNav{
+		.cont{
+			#selSecc{
+				width: 17%;
+			}
+			.menu{
+				width: 50%;
+				ul#botones{
+					width: 100%;
+					
+					li.bot{
+						width: calc(29% - 5px);
+					}
+				}
+			}
+			#redes{
+				width: 12%;
+			}
+		}
+	}
+
 }
 

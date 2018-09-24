@@ -4,6 +4,10 @@ select{
         color: #438ec4;
     }
 }
+span.select2.select2-container.select2-container--default{
+    width: 150px !important;
+}
+
 .select2-container {
     margin-right: 10px;
     text-align: left;

@@ -111,6 +111,7 @@ $(function () {
         },
 
         armaCapac: function(capac){
+                $('#notiCapac').append("<h2>CAPACITACIONES PASADAS</h2>");
             for (var i = 0; i < capac.length; i++) {
 
                 let titulo = capac[i].titulo,
@@ -120,6 +121,7 @@ $(function () {
                     texto = capac[i].texto,
                     etiqCapac = capac[i].etiqueta,
                     destacado = capac[i].destacado;
+
 
                 if(destacado == "si"){
                     let capacita = '<div class="capac destacado"><div class="etiqCapac">'+ etiqCapac +'</div>';
@@ -133,7 +135,7 @@ $(function () {
                     let capacita = '<div class="capac"><div class="etiqCapac">'+ etiqCapac +'</div>';
                         capacita += '<h2 class="titu">' + titulo + '</h2>';
                         capacita += '<div class="infoCapac"><p class="lugar">' + lugar + '</p><p class="fechaCapac">' + fecha + '</p></div>';
-                        capacita += '<div class="foto" style="background-image:url(img/capac/'+ foto+')"></div>';
+                        capacita += '<div class="foto" style="background-image:url(img/capac/pasadas/'+ foto+')"></div>';
                         capacita += '<div class="capacTex"><p class="tex">'+ texto +'</p></div>';
                         capacita += '</div>';
                     $('#notiCapac').append(capacita);
@@ -242,10 +244,28 @@ $(function () {
         },
 
         cambiaBotones: function(){
-            let botManual = $("#stickyNav .cont #botones #manual"),
-                botCapaci = $("#stickyNav .cont #botones #capacitacion"),
-                botNoti = $("#stickyNav .cont #botones #noticias"),
+            let botManual = $("#stickyNav .cont .menu #botones #manual"),
+                botManuFijo = $("#stickyNav .cont .menu #manuFijo"),
+                botCapaci = $("#stickyNav .cont .menu #botones #capacitacion"),
+                botCapacFijo = $("#stickyNav .cont .menu #capacFijo"),
+                botNoti = $("#stickyNav .cont .menu #botones #noticias"),
+                botNotiFijo = $("#stickyNav .cont .menu #notiFijo"),
+                menuBotones = $("#stickyNav .cont .menu #botones"),
+                botCruz = $("#stickyNav .cont #cruz"),
                 botHambur = $("#stickyNav .cont #hambur");
+                botManuFijo.hide();
+                botCapacFijo.hide();
+                botNotiFijo.hide();
+
+            if(ancho > 641){
+                menuBotones.show();
+            }else{
+                botCruz.hide();
+                menuBotones.hide();
+                botManuFijo.hide();
+                botCapacFijo.hide();
+                botNotiFijo.hide();
+            }
 
             botManual.on("click", function(){
                 $("#conteManual").css("transition", "all .5s ease-in").css("display", "block");
@@ -254,6 +274,15 @@ $(function () {
                 botManual.addClass("active");
                 botCapaci.removeClass("active");
                 botNoti.removeClass("active");
+
+                if(ancho < 640){
+                    botManuFijo.show();
+                    botCapacFijo.hide();
+                    botNotiFijo.hide();
+                    menuBotones.slideToggle("fast");
+                    botCruz.hide();
+                    botHambur.show();
+                }
             });
             botCapaci.on("click", function(){
                 $("#conteCapaci").css("transition", "all .5s ease-in").css("display", "block");
@@ -262,6 +291,15 @@ $(function () {
                 botManual.removeClass("active");
                 botCapaci.addClass("active");
                 botNoti.removeClass("active");
+
+                if(ancho < 640){
+                    botManuFijo.hide();
+                    botCapacFijo.show();
+                    botNotiFijo.hide();
+                    menuBotones.slideToggle("fast");
+                    botCruz.hide();
+                    botHambur.show();
+                }
             });
             botNoti.on("click", function(){
                 $("#destacados, #contenedor").css("transition", "all .5s ease-in").css("display", "block");
@@ -270,12 +308,32 @@ $(function () {
                 botManual.removeClass("active");
                 botCapaci.removeClass("active");
                 botNoti.addClass("active");
+
+                if(ancho < 640){
+                    botNotiFijo.show();
+                    botCapacFijo.hide();
+                    botManuFijo.hide();
+                    menuBotones.slideToggle("fast");
+                    botCruz.hide();
+                    botHambur.show();
+                }
             });
 
             botHambur.on("click", function(){
-                $("#botones").css("transition", "all .5s ease-in").css("opacity", 1).toggle("opacityUno opacityCero");
+                
+                menuBotones.slideToggle("fast", function(){
+                    botHambur.hide();
+                    botCruz.show();
+                });
+                // $(".menu #botones").css("transition", "all .5s ease-in").css("opacity", 1).toggle("opacityUno opacityCero");
             })
 
+            botCruz.on("click", function(){
+                menuBotones.slideToggle("fast", function(){
+                    botCruz.hide();
+                    botHambur.show();
+                })
+            })
         }
     }
 

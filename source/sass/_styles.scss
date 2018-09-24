@@ -130,6 +130,7 @@ nav#stickyNav{
 					list-style: none;
 					display: inline-block;
 					//padding: 7px 0;
+					background-color: #fff;
 					margin: auto;
 					text-align: center;
 					cursor: pointer;
@@ -170,9 +171,9 @@ nav#stickyNav{
 			}
 		}
 
-		#hambur{
-			display:none;
-		}
+		// #hambur, #cruz{
+		// 	display:none;
+		// }
 
 		#redes{
 			width: 15%;
@@ -325,10 +326,16 @@ nav#stickyNav{
 			}
 			
 		}
+		h2{
+			color: #000;
+			text-align: left;
+
+		}
 
 		.capac{
 			width: calc(30% - 5px);
 			margin: 30px 1%;
+
 
 			&.destacado{
 				margin: 50px auto;
@@ -359,6 +366,7 @@ nav#stickyNav{
 			}
 
 			h2.titu{
+				color: #438ec4;
 				min-height: 80px;
 				margin-bottom: 0;
 				font-size: 25px;
