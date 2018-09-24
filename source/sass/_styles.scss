@@ -336,6 +336,9 @@ nav#stickyNav{
 			width: calc(30% - 5px);
 			margin: 30px 1%;
 
+			.foto{
+				background-size: 135%;
+			}
 
 			&.destacado{
 				margin: 50px auto;
