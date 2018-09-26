@@ -121,7 +121,7 @@ nav#stickyNav{
 				width: 100%;
 				
 				li.bot{
-					width: calc(31% - 5px);
+					width: calc(25% - 10px);
 					height: 30px;
 					font-weight: 400;
 					font-size: 15px;
@@ -164,6 +164,70 @@ nav#stickyNav{
 
 							&:hover{
 								color: #fff;
+							}
+						}
+					}
+
+					&#institucional{
+						#menuInsti{
+							width: 100%;
+							max-width: 1260px;
+							display: block;
+							position: relative;
+							margin: auto;
+
+							ul#botonesMenuInsti{
+								width: 100%;
+								position: absolute;
+								top: 0px;
+								left: 0px;
+
+								li.bot{
+									width: 100%;
+									height: 30px;
+									font-weight: 400;
+									font-size: 15px;
+									line-height: 30px;
+									list-style: none;
+									display: inline-block;
+									background-color: #fff;
+									margin: auto;
+									text-align: center;
+									cursor: pointer;
+									vertical-align: middle;
+
+									a{
+										color: #000;
+										height: 20px;
+										text-decoration: none;
+										line-height: 30px;
+
+										&:link, &:visited{
+											color: #000;
+										}
+
+										&:hover{
+											color: #438ec4;
+										}
+									}
+
+									&.active{
+										color: #fff;
+										background-color: #438ec4;
+
+										a{
+											color: #fff;
+
+											&:link, &:visited{
+												color: #fff;
+											}
+
+											&:hover{
+												color: #fff;
+											}
+										}
+									}
+								}
 							}
 						}
 					}
@@ -216,14 +280,27 @@ nav#stickyNav{
 			}
 		}
 	}
+
+	
 }
 
 .container{
 
 	max-width: 1260px;
 
+	#tree{
+		width: 91%;
+	    max-width: 1260px;
+	    padding: 10px 20px;
+	    font-size: 12px;
+	    margin: 20px auto;
+	    span{
+	    	margin: auto 10px;
+	    }
+	}
 
-	#contenedor, #destacados, #conteManual, #conteCapaci, #destaCapac, #notiCapac{
+
+	#conteNoti #contenedor, #conteNoti #destacados, #conteManual, #conteCapaci, #destaCapac, #notiCapac{
 
 		width: 100%;
 		max-width: 1260px;
@@ -450,7 +527,7 @@ nav#stickyNav{
 		display: none;
 		transition: all .5s ease-in;
 	}
-	#conteNoti{
+	#conteInsti{
 		display: none;
 		height: 1000px;
 		background-color: blue;

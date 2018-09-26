@@ -23,8 +23,30 @@ span.select2.select2-container.select2-container--default{
     // line-height: 32px;
     // padding-left: 20px;
     // padding-right: 30px;
+    &:after{
+        content:"";
+        width: 40px;
+        height: 30px;
+        position: absolute;
+        top: -5px;
+        right: -35px;
+        background-repeat: no-repeat;
+        background-image: url("../img/sprite.svg");
+        background-position: left -1px;
+        background-size: 200%;
+
+        @media (max-width: 770px) {
+            width: 30px;
+            height: 25px;
+            top: 0px;
+            right: -25px;
+        }
+    }
     &:hover{
         color: #438ec4;
+        &:after{
+            background-position: right -1px;
+        }
     }
 
     @media (max-width: 770px) {
@@ -47,7 +69,6 @@ span.select2.select2-container.select2-container--default{
 
 .select2-dropdown{
     font-family: 'Suecaslabmedium', Georgia;
-
 }
 
 .select2-results__option {
@@ -59,8 +80,7 @@ span.select2.select2-container.select2-container--default{
 .select2-container--default .select2-selection--multiple{
     border: 1px solid #dadada;
     border-radius: 20px;
-    min-height: 34px;
-    
+    min-height: 34px;    
 }
 
 .select2-container--default .select2-search--inline .select2-search__field{
@@ -146,25 +166,25 @@ span.select2.select2-container.select2-container--default{
     color: #000;
     position: relative;
 
-    &:after{
-        content:"";
-        width: 40px;
-        height: 30px;
-        position: absolute;
-        top: -5px;
-        right: -35px;
-        background-repeat: no-repeat;
-        background-image: url("../img/sprite.svg");
-        background-position: left -2px;
-        background-size: 200%;
+    // &:after{
+    //     content:"";
+    //     width: 40px;
+    //     height: 30px;
+    //     position: absolute;
+    //     top: -5px;
+    //     right: -35px;
+    //     background-repeat: no-repeat;
+    //     background-image: url("../img/sprite.svg");
+    //     background-position: left -2px;
+    //     background-size: 200%;
 
-        @media (max-width: 770px) {
-            width: 30px;
-            height: 25px;
-            top: 0px;
-            right: -25px;
-        }
-    }
+    //     @media (max-width: 770px) {
+    //         width: 30px;
+    //         height: 25px;
+    //         top: 0px;
+    //         right: -25px;
+    //     }
+    // }
     &:hover{
         color: #438ec4 !important;
         //border-bottom: 1px solid red;

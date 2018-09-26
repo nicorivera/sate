@@ -26,7 +26,7 @@
 			.menu{
 				width: 50%;
 
-				#manuFijo, #capacFijo, #notiFijo{
+				#manuFijo, #capacFijo, #notiFijo, #instiFijo{
 					width: 60%;
 					height: 35px;
 				    font-size: 15px;
@@ -95,9 +95,14 @@
 				display: none;
 			}
 		}
+		#menuInsti{
+			ul#botonesMenuInsti{
+				top: 26px;
+			}
+		}
 	}
 	.container{
-		#contenedor, #destacados, #conteManual, #conteCapaci, #destaCapac, #notiCapac{
+		#conteNoti #contenedor, #conteNoti #destacados, #conteManual, #conteCapaci, #destaCapac, #notiCapac{
 			.noti, .capac{
 				width: 95%;
 				display: block;
@@ -133,11 +138,11 @@
 				}
 			}
 		}
-		#contenedor{
+		#conteNoti #contenedor{
 			width: 95%;
 		}
 
-		#conteManual{
+		#conteNoti #conteManual{
 			iframe, img{
 				width: 97%;
 				margin: 50px 1%;
@@ -202,7 +207,7 @@
 	}
 
 	.container{
-		#contenedor, #destacados, #conteManual, #conteCapaci, #destaCapac, #notiCapac{
+		#conteNoti #contenedor, #conteNoti #destacados, #conteManual, #conteCapaci, #destaCapac, #notiCapac{
 			.noti, .capac{
 				&.destacado{
 					h2.titu{

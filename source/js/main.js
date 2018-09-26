@@ -85,7 +85,7 @@ $(function () {
                             aviso += '<div class="info"><p class="fecha">'+ fecha +' | '+ autor+'</p><p class="etiqueta">'+etiqueta+'</p></div>';
                             aviso += '<div class="notiTex"><p class="tex">'+ texto +'</p></div>';
                             aviso += '</div>';
-                $('#destacados').append(aviso);
+                $('#conteNoti #destacados').append(aviso);
                 //         }else if(foto_tipo == "chi"){
                 //             let aviso = '<div class="noti '+ etiq_corto +' destacaChico"><h2 class="titu">' + titulo + '</h2>';
                 //                 aviso += '<h3 class="baja">' + bajada + '</h3>';
@@ -102,7 +102,7 @@ $(function () {
                         aviso += '<div class="info"><p class="fecha">'+ fecha +' | '+ autor+'</p><p class="etiqueta">'+etiqueta+'</p></div>';
                         aviso += '<div class="notiTex"><p class="tex">'+ texto +'</p></div>';
                         aviso += '</div>';
-                $('#contenedor').append(aviso);
+                $('#conteNoti #contenedor').append(aviso);
                 }
 
             }
@@ -223,15 +223,17 @@ $(function () {
                         //$(".noti").css("display", "none");
 
                     if(valor == "secciones"){
-                        console.log("valor secciones", valor, etiq_corto);
+                        //console.log("valor secciones", valor, etiq_corto);
                         $(".noti").css("display", "inline-block");
+                        $("#tree").html("<span>HOME </span> > <span>NOTICIAS </span>");
                     }else if(valor == etiq_corto){
-                        console.log("valor etiq_corto", valor, etiq_corto);
-                        console.log(valor == etiq_corto);
-                        $("#destacados .noti").css("display", "none");
-                        $("#contenedor .noti").css("display", "none");
-                        $("#destacados .noti."+etiq_corto).css("display", "inline-block");
-                        $("#contenedor .noti."+etiq_corto).css("display", "inline-block");
+                        //console.log("valor etiq_corto", valor, etiq_corto);
+                        //console.log(valor == etiq_corto);
+                        $("#conteNoti #destacados .noti").css("display", "none");
+                        $("#conteNoti #contenedor .noti").css("display", "none");
+                        $("#conteNoti #destacados .noti."+etiq_corto).css("display", "inline-block");
+                        $("#conteNoti #contenedor .noti."+etiq_corto).css("display", "inline-block");
+                        $("#tree").html("<span>HOME </span> > <span>NOTICIAS </span> > <span>"+ selEtiqueta.toUpperCase() +"</span>");
                     }
                 }
             } // termina for spreadhseeht
@@ -250,12 +252,17 @@ $(function () {
                 botCapacFijo = $("#stickyNav .cont .menu #capacFijo"),
                 botNoti = $("#stickyNav .cont .menu #botones #noticias"),
                 botNotiFijo = $("#stickyNav .cont .menu #notiFijo"),
+                botInsti = $("#stickyNav .cont .menu #botones #institucional"),
+                botInstiFijo = $("#stickyNav .cont .menu #instiFijo"),
                 menuBotones = $("#stickyNav .cont .menu #botones"),
+                menuInstitucion = $("#stickyNav .cont .menu #botones #institucional #menuInsti #botonesMenuInsti"),
                 botCruz = $("#stickyNav .cont #cruz"),
                 botHambur = $("#stickyNav .cont #hambur");
                 botManuFijo.hide();
                 botCapacFijo.hide();
                 botNotiFijo.hide();
+                botInstiFijo.hide();
+                menuInstitucion.hide();
 
             if(ancho > 641){
                 menuBotones.show();
@@ -265,20 +272,25 @@ $(function () {
                 botManuFijo.hide();
                 botCapacFijo.hide();
                 botNotiFijo.hide();
+                botInstiFijo.hide();
             }
 
             botManual.on("click", function(){
                 $("#conteManual").css("transition", "all .5s ease-in").css("display", "block");
-                $("#destacados, #contenedor, #conteNoti, #conteCapaci").css("transition", "all .5s ease-in").css("display", "none");
+                $("#conteNoti, #conteCapaci").css("transition", "all .5s ease-in").css("display", "none");
                 $("#selSecc").css("transition", "all .5s ease-in").css("opacity", 0);
                 botManual.addClass("active");
                 botCapaci.removeClass("active");
                 botNoti.removeClass("active");
+                botInsti.removeClass("active");
+                menuInstitucion.hide();
+                $("#tree").html("<span>HOME </span> > <span>"+botManual.text()+"</span>");
 
                 if(ancho < 640){
                     botManuFijo.show();
                     botCapacFijo.hide();
                     botNotiFijo.hide();
+                    botInstiFijo.hide();
                     menuBotones.slideToggle("fast");
                     botCruz.hide();
                     botHambur.show();
@@ -286,33 +298,64 @@ $(function () {
             });
             botCapaci.on("click", function(){
                 $("#conteCapaci").css("transition", "all .5s ease-in").css("display", "block");
-                $("#destacados, #contenedor, #conteNoti, #conteManual").css("transition", "all .5s ease-in").css("display", "none");
+                $("#conteNoti, #conteManual").css("transition", "all .5s ease-in").css("display", "none");
                 $("#selSecc").css("transition", "all .5s ease-in").css("opacity", 0);
                 botManual.removeClass("active");
                 botCapaci.addClass("active");
                 botNoti.removeClass("active");
+                botInsti.removeClass("active");
+                menuInstitucion.hide();
+                $("#tree").html("<span>HOME </span> > <span>"+botCapaci.text()+"</span>");
 
                 if(ancho < 640){
                     botManuFijo.hide();
                     botCapacFijo.show();
                     botNotiFijo.hide();
+                    botInstiFijo.hide();
                     menuBotones.slideToggle("fast");
                     botCruz.hide();
                     botHambur.show();
                 }
             });
             botNoti.on("click", function(){
-                $("#destacados, #contenedor").css("transition", "all .5s ease-in").css("display", "block");
-                $("#conteCapaci, #conteManual, #conteNoti").css("transition", "all .5s ease-in").css("display", "none");
+                $("#conteNoti").css("transition", "all .5s ease-in").css("display", "block");
+                $("#conteCapaci, #conteManual").css("transition", "all .5s ease-in").css("display", "none");
                 $("#selSecc").css("transition", "all .5s ease-in").css("opacity", 1);
                 botManual.removeClass("active");
                 botCapaci.removeClass("active");
                 botNoti.addClass("active");
+                botInsti.removeClass("active");
+                menuInstitucion.hide();
+                $("#tree").html("<span>HOME </span> > <span>"+botNoti.text()+"</span>");
 
                 if(ancho < 640){
                     botNotiFijo.show();
                     botCapacFijo.hide();
                     botManuFijo.hide();
+                    botInstiFijo.hide();
+                    menuBotones.slideToggle("fast");
+                    botCruz.hide();
+                    botHambur.show();
+                }
+            });
+            botInsti.on("click", function(){
+                //$("#conteInsti").css("transition", "all .5s ease-in").css("display", "block");
+                //$("#conteCapaci, #conteManual, #conteNoti").css("transition", "all .5s ease-in").css("display", "none");
+                $("#selSecc").css("transition", "all .5s ease-in").css("opacity", 0);
+                botManual.removeClass("active");
+                botCapaci.removeClass("active");
+                botNoti.removeClass("active");
+                botInsti.addClass("active");
+                //menuInstitucion.show();
+                menuInstitucion.slideToggle("fast");
+                let botInsti2 = $("#stickyNav .cont .menu #botones #institucional a");
+                $("#tree").html("<span>HOME </span> > <span>"+botInsti2.text()+"</span>"+"</span>");
+
+                if(ancho < 640){
+                    botInstiFijo.show();
+                    botCapacFijo.hide();
+                    botManuFijo.hide();
+                    botNotiFijo.hide();
                     menuBotones.slideToggle("fast");
                     botCruz.hide();
                     botHambur.show();
