@@ -81,7 +81,7 @@ $(function () {
                     // if(foto_tipo == "gra"){
                         let aviso = '<div class="noti '+ etiq_corto +' destacado"><h2 class="titu">' + titulo + '</h2>';
                             aviso += '<h3 class="baja">' + bajada + '</h3>';
-                            aviso += '<div class="foto ' + foto_tipo + '" style="background-image:url(img/'+ foto+')"></div>';
+                            aviso += '<div class="foto ' + foto_tipo + '" style="background-image:url(img/noti/'+ foto+')"></div>';
                             aviso += '<div class="info"><p class="fecha">'+ fecha +' | '+ autor+'</p><p class="etiqueta">'+etiqueta+'</p></div>';
                             aviso += '<div class="notiTex"><p class="tex">'+ texto +'</p></div>';
                             aviso += '</div>';
@@ -98,7 +98,7 @@ $(function () {
                 }else{
                     let aviso = '<div class="noti '+ etiq_corto +'"><h2 class="titu">' + titulo + '</h2>';
                         aviso += '<h3 class="baja">' + bajada + '</h3>';
-                        aviso += '<div class="foto ' + foto_tipo + '" style="background-image:url(img/'+ foto+')"></div>';
+                        aviso += '<div class="foto ' + foto_tipo + '" style="background-image:url(img/noti/'+ foto+')"></div>';
                         aviso += '<div class="info"><p class="fecha">'+ fecha +' | '+ autor+'</p><p class="etiqueta">'+etiqueta+'</p></div>';
                         aviso += '<div class="notiTex"><p class="tex">'+ texto +'</p></div>';
                         aviso += '</div>';
