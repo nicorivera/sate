@@ -352,9 +352,11 @@ nav#stickyNav{
 			.foto{
 				width: 99%;
 				margin: auto;
-				height: 250px;
+				height: 350px;
 				border: 1px solid #dadada;
 				background-size: 105%;
+				background-position: center;
+				background-repeat: no-repeat;
 			}
 
 			.info{
