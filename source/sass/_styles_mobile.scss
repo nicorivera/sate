@@ -102,7 +102,7 @@
 		}
 	}
 	.container{
-		#conteNoti #contenedor, #conteNoti #destacados, #conteManual, #conteCapaci, #destaCapac, #notiCapac{
+		#conteNoti #contenedor, #conteNoti #destacados, #conteManual, #conteCapaci, #destaCapac, #notiCapac, #conteInsti{
 			.noti, .capac{
 				width: 95%;
 				display: block;
@@ -135,6 +135,21 @@
 				h2.titu{
 					font-size: 23px;
 					line-height: 25px;
+				}
+			}
+		}
+		#conteInsti{
+			width: 95% !important;
+			.comi{
+				.persona{
+					letter-spacing: -0.6px;
+					
+					span{
+						font-size: 13px;
+					}
+					br{
+						display: inline;
+					}
 				}
 			}
 		}

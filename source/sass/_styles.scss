@@ -121,7 +121,7 @@ nav#stickyNav{
 		
 		.menu{
 			display: inline-block;
-			width: 53%;
+			width: 62%;
 
 			ul#botones{
 				width: 100%;
@@ -154,6 +154,11 @@ nav#stickyNav{
 
 						&:hover{
 							color: #438ec4;
+						}
+
+						&.comision{
+							font-size: 14px;
+							letter-spacing: -0.5px;
 						}
 					}
 
@@ -306,7 +311,7 @@ nav#stickyNav{
 	}
 
 
-	#conteNoti #contenedor, #conteNoti #destacados, #conteManual, #conteCapaci, #destaCapac, #notiCapac{
+	#conteNoti #contenedor, #conteNoti #destacados, #conteManual, #conteCapaci, #destaCapac, #notiCapac, #conteComision{
 
 		width: 100%;
 		max-width: 1260px;
@@ -357,6 +362,10 @@ nav#stickyNav{
 				background-size: 105%;
 				background-position: center;
 				background-repeat: no-repeat;
+
+				&.SATE-flyer_asamblea2020{
+					background-position: top;
+				}
 			}
 
 			.info{
@@ -513,6 +522,43 @@ nav#stickyNav{
 		}
 	}
 
+	#conteInsti{
+		display: none;
+		width: 1100px !important;
+		transition: all .5s ease-in;
+		height: auto !important;
+		margin: auto;
+
+		.comi{
+
+			.etiqCapac{
+					width: 120px;
+					height: 25px;
+				    font-size: 13px;
+				    line-height: 25px;
+					text-align: center;
+					text-transform: uppercase;
+					color: #a9a9a9;
+					border: 1px solid #a9a9a9;
+				}
+
+			.persona{
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 20px;
+				text-align: left;
+				margin: auto;
+
+				span{
+					font-weight: 700;
+				}
+				br{
+					display: none;
+				}
+			}
+		}
+	}
+
 	#conteManual{
 		display: none;
 		width: 95%;
@@ -538,7 +584,6 @@ nav#stickyNav{
 	#conteInsti{
 		display: none;
 		height: 1000px;
-		background-color: blue;
 		transition: all .5s ease-in;
 	}
 }
@@ -553,10 +598,14 @@ footer{
 	background-color: #438ec4;
 	text-align: center;
 	margin: 50px auto 0;
+		//position: relative;
 
 	.links{
 		max-width: 1260px;
 		margin: auto;
+			//position: absolute;
+			//top: 10px;
+
 
 		a.botFoo{
 			font-size: 12px;
@@ -566,13 +615,62 @@ footer{
 			border-bottom: 1px solid #438ec4;
 			display: inline-block;
 			margin: 10px 2%;
-			width: calc(10% - 5px);
+			width: calc(9% - 5px);
 
 			&:hover{
 				border-bottom: 1px solid #fff;
 			}
 		}
 	}
+		// .redes{
+		// 	width: 15%;
+		// 	display: inline-block;
+		// 	vertical-align: middle;
+
+			ul.redes{
+				width: 100%;
+				text-align: center;
+
+				li.red{
+					margin-left: 5px;
+					display: inline-block;
+					height: 55px;
+					vertical-align: middle;
+
+					.fiscal{
+						vertical-align: top;
+
+						img{
+							height: 55px;
+						}
+					}
+					.fac, .twi{
+						width: 40px;
+						height: 30px;
+						background-image: url('../img/red.svg');
+						display: inline-block;
+						vertical-align: middle;
+					}
+
+					.fac{
+						background-position: top left;
+						
+						&:hover{
+							background-position: bottom left;
+						}
+					}
+
+					.twi{
+						background-position: top right;
+						
+						&:hover{
+							background-position: bottom right;
+						}
+					}
+					
+				}
+			}
+		//}
 }
 
 
@@ -716,3 +814,376 @@ footer{
 	width: 50%;
 	margin: auto;
 }
+
+////////// BOTON CUOTA SOCIAL ///////////
+
+.boton-todopago-css .aviso-wrapper {
+	width:287;
+  }
+  .backCol{
+	  background-color: #FFF;
+  }
+  .aviso-data{
+	  display: inline-block;
+  }
+  span{
+	  color: #000;
+  }
+  
+  .boton-todopago-css .aviso-light {
+	color: #ACACAC;
+  }
+  .boton-todopago-css .aviso {
+	font-size: 16px;
+	margin-bottom: 15px;
+  }
+  @media (min-width: 992px) {
+	  .boton-todopago-css .col-md-4 {
+		  width: 33.33333333%;
+		  float: left;
+	  }
+  }
+  
+  @media (min-width: 768px) {
+	  .boton-todopago-css .col-sm-4 {
+		  width: 33.33333333%;
+		  float: left;
+	  } 
+  }
+  .boton-todopago-css .col-sm-4, .boton-todopago-css .col-md-4 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+  }
+  .boton-todopago-css * {
+	box-sizing: border-box;
+  }
+  .boton-todopago-css user agent stylesheetdiv {
+	display: block;
+  }
+  .boton-todopago-css .aviso-imagen {
+	width: 80px;
+  }
+  .boton-todopago-css .btn.disabled, .boton-todopago-css .btn[disabled], .boton-todopago-css fieldset[disabled] .btn {
+	cursor: not-allowed;
+	pointer-events: none;
+	opacity: .65;
+	filter: alpha(opacity=65);
+	box-shadow: none;
+	color: #fff;
+	background-color: rgb(0, 188, 220);
+	border: 1px solid rgb(0, 188, 220);
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+  }
+  .boton-todopago-css .btn:hover{
+	  color: rgb(0, 188, 220);
+	  background-color: #FFF;
+  }
+  .boton-todopago-css {
+	color: #000;
+	background-color: #fff;
+	font-family: 'Cabin',sans-serif;
+	font-weight: 100;
+	font-size: 100%;
+	width: fit-content;
+	display: inline-block;
+  }
+  #aviso-3{
+	  width: 100%;
+  }
+  .boton-todopago-css .aviso-image-wrapper {
+	display: inline-block;
+	width: fit-content;
+  }
+  .boton-todopago-css .tipo-boton-class {
+	display: block;
+  }
+  .boton-todopago-css .aviso-light .aviso-wrapper {
+	background-color: #F9F9F9;
+	border: 1px solid #f1f1f1;
+  }
+  .boton-todopago-css .aviso-large .aviso-wrapper, .boton-todopago-css .aviso-small .aviso-wrapper {
+	padding-top: 5px;
+	padding-bottom: 5px;
+  }
+  @media (min-width: 992px) {
+  .boton-todopago-css .col-md-12 {
+	width: 100%;
+	float: left;
+  } }
+  
+  @media (min-width: 768px) {
+  .boton-todopago-css .col-sm-12 {
+	width: 100%;
+	float: left;
+  }}
+  
+  .boton-todopago-css .col-xs-12, .boton-todopago-css .col-sm-12, .boton-todopago-css .col-md-12, .boton-todopago-css .col-lg-12 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+  }
+  
+  .boton-todopago-css section {
+	font-size: 10px;
+  }
+  .boton-todopago-css body {
+	color: #808080;
+	background-color: #FDFDFD;
+	font-family: 'Cabin',sans-serif;
+	font-weight: 100;
+	font-size: 100%;
+  }
+  body {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #333;
+	background-color: #fff;
+  }
+  .boton-todopago-css .aviso-light .aviso-image-wrapper {
+	border-color: #fff;
+	display: inline-block;
+  }
+  .boton-todopago-css .aviso-large .aviso-image-wrapper {
+	  border: 4px solid;
+	  margin-bottom: 10px;
+	  display: inline-block;
+  }
+  .boton-todopago-css * {
+	box-sizing: border-box;
+  }
+  .boton-todopago-css .aviso-light {
+	color: #ACACAC;
+  }
+  .boton-todopago-css .aviso {
+	font-size: 16px;
+	margin-bottom: 15px;
+  }
+  .boton-todopago-css section {
+	font-size: 10px;
+  }
+  
+  @media (min-width: 992px) {
+  .boton-todopago-css .col-md-7 {
+	width: 58.33333333%;
+	float: left;
+  }}
+  
+  @media (min-width: 768px){
+  .boton-todopago-css .col-sm-8 {
+	width: 66.66666667%;
+	float: left;
+  }}
+  
+  .boton-todopago-css .col-md-7, .boton-todopago-css .col-sm-8, .boton-todopago-css .col-xs-12 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 5px;
+	padding-right: 5px;
+  }
+  
+  @media (min-width: 992px){
+  .boton-todopago-css .col-md-5 {
+	width: 41.66666667%;
+	float: left;
+  }}
+  
+  .boton-todopago-css .col-md-5 {
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+  }
+  
+  .boton-todopago-css .aviso-price-label, .boton-todopago-css .aviso-small .aviso-price-label {
+	font-size: 0.7em;
+  }
+  .boton-todopago-css .line {
+	display: block;
+  }
+  .boton-todopago-css .text-center {
+	text-align: center;
+  }
+  
+  .boton-todopago-css .aviso-light .aviso-price {
+	color: #e6007e;
+  }
+  .boton-todopago-css .aviso-large .aviso-price, .boton-todopago-css .aviso-small .aviso-price {
+	font-size: 1em;
+	font-weight: 700;
+  }
+  
+  .boton-todopago-css .aviso-boton-texto {
+	border: 1px solid;
+  }
+  .aviso-boton-texto .btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+	cursor: not-allowed;
+	pointer-events: none;
+	opacity: .65;
+	filter: alpha(opacity=65);
+	box-shadow: none;
+  }
+  .boton-todopago-css .aviso-boton-texto {
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+	margin-top: 5px;
+  }
+  .boton-todopago-css .btn {
+	font-size: 16px;
+	padding-left: 40px;
+	padding-right: 40px;
+	border: none;
+	display: inline-block;
+	margin-bottom: 0;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid transparent;
+	white-space: nowrap;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	border-radius: 4px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+  }
+  
+  .boton-todopago-css input {
+	line-height: normal;
+	background-color: #000;
+	color: #fff;
+  }
+  .boton-todopago-css button {
+	color: inherit;
+	font: inherit;
+	margin: 0;
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	color: inherit;
+	font: inherit;
+	margin: 0;
+  }
+  
+  .boton-todopago-css .aviso-large .aviso-title {
+	font-size: 1em;
+	font-weight: bold;
+	line-height: 2em;
+  }
+  
+  .boton-todopago-css .aviso-large .aviso-description {
+	font-size: 0.7em;
+	line-height: 1.5em;
+  }
+  
+  .boton-todopago-css .aviso-dark {
+	color: #FFF;
+  }
+  .boton-todopago-css .aviso-dark .aviso-wrapper {
+	  background-color: #fff;
+	  border: 1px solid #808080;
+	  border-radius: 10px;
+  }
+  .boton-todopago-css .aviso-dark .aviso-image-wrapper{
+	  border-color:#fff;
+	  display: inline-block;
+  }
+  .boton-todopago-css .aviso-dark button{
+	  background-color: #FFF;
+	  color:#e6007e;
+  }
+  
+  .boton-todopago-css .aviso-small .aviso-wrapper {
+	padding-top: 15px;
+	padding-bottom: 15px;
+  }
+  .boton-todopago-css .aviso-small .aviso-image-wrapper {
+	border:4px solid;
+	display: inline-block;
+  }
+  .boton-todopago-css .aviso-small .aviso-price-label {
+	font-size: 0.7em;
+  }
+  .boton-todopago-css .aviso-small .aviso-price {
+	font-size: 1em;
+	font-weight: 700;
+  }
+  .boton-todopago-css .aviso-small .aviso-description {
+	font-size: 0.7em;
+	line-height: 1.5em;
+  
+  }
+  .boton-todopago-css .aviso-small button {
+	font-size: 0.7em;
+	padding: 5px;
+	line-height: 0.9em;
+	display: block;
+	margin: 5px auto;
+	width: 90%;
+  }
+  
+  .boton-todopago-css .aviso-light .aviso-image-wrapper {
+	border-color: #fff;
+	display: inline-block;
+  }
+  
+  .boton-todopago-css .aviso-dark .aviso-image-wrapper {
+	  border-color: #fff;
+	  display: inline-block;
+  }
+  
+  @media (min-width: 992px){
+	  .boton-todopago-css .col-md-4 {
+		  width: 33.33333333%;
+		  float: left;
+	  }
+  }
+  
+  @media (min-width: 768px){
+	  .boton-todopago-css .col-sm-4 {
+		  width: 33.33333333%;
+		  float: left;
+	  }
+  }
+  
+  @media (min-width: 992px){
+	  .boton-todopago-css .col-md-6 {
+		  width: 50%;
+		  float: left;
+	  }
+  }
+  
+  @media (min-width: 768px){
+	  .boton-todopago-css .col-sm-6 {
+		  width: 50%;
+		  float: left;
+	  }
+  }
+  
+  .padding-left-5 {
+	  padding-left: 5px !important;
+  }
+  .padding-right-5 {
+	  padding-right: 5px !important;
+  }
+  .padding-left-15 {
+	  padding-left: 15px !important;
+  }
+  
+  @media print{
+	  .no-print, .no-print * {
+		  display: none !important;
+	  }
+  }
+  
+
+  /////// FIN BOTON CUOTA SOCIAL ///////////

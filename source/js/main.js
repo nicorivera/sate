@@ -35,6 +35,7 @@ $(function () {
                     notis = data;
                     app.armaData(notis);
                     app.armaSticky();
+                    app.armaComision();
                     app.cambiaBotones();
                 },
                 error: function(error, status) {
@@ -68,6 +69,7 @@ $(function () {
                     bajada = notis[i].bajada,
                     foto_tipo = notis[i].foto_tipo,
                     foto = notis[i].foto,
+                    foto_corto = foto.slice(0, -4),
                     fecha = notis[i].fecha,
                     destacado = notis[i].destacado,
                     autor = notis[i].autor,
@@ -76,12 +78,11 @@ $(function () {
                     seccion = notis[i].seccion,
                     texto = notis[i].texto;
 
-
                 if(destacado == "si"){
                     // if(foto_tipo == "gra"){
                         let aviso = '<div class="noti '+ etiq_corto +' destacado"><h2 class="titu">' + titulo + '</h2>';
                             aviso += '<h3 class="baja">' + bajada + '</h3>';
-                            aviso += '<div class="foto ' + foto_tipo + " " + foto +'" style="background-image:url(img/noti/'+ foto+'.jpg)"></div>';
+                            aviso += '<div class="foto ' + foto_corto + '" style="background-image:url(img/noti/'+ foto+')"></div>';
                             aviso += '<div class="info"><p class="fecha">'+ fecha +' | '+ autor+'</p><p class="etiqueta">'+etiqueta+'</p></div>';
                             aviso += '<div class="notiTex"><p class="tex">'+ texto +'</p></div>';
                             aviso += '</div>';
@@ -96,10 +97,16 @@ $(function () {
                 // $('#contenedor').append(aviso);
                 //         }
                 }else{
+
                     let aviso = '<div class="noti '+ etiq_corto +'"><h2 class="titu">' + titulo + '</h2>';
                         aviso += '<h3 class="baja">' + bajada + '</h3>';
-                        aviso += '<div class="foto ' + foto_tipo + '" style="background-image:url(img/noti/'+ foto+')"></div>';
-                        aviso += '<div class="info"><p class="fecha">'+ fecha +' | '+ autor+'</p><p class="etiqueta">'+etiqueta+'</p></div>';
+                        aviso += '<div class="foto ' + foto_corto + '" style="background-image:url(img/noti/'+ foto+')"></div>';
+                        aviso += '<div class="info"><p class="fecha">'+ fecha +' | '+ autor+'</p>';
+                        if(etiqueta){
+                            aviso += '<p class="etiqueta">'+etiqueta+'</p></div>';
+                        }else{
+                            aviso += '</div>';
+                        }
                         aviso += '<div class="notiTex"><p class="tex">'+ texto +'</p></div>';
                         aviso += '</div>';
                 $('#conteNoti #contenedor').append(aviso);
@@ -118,6 +125,7 @@ $(function () {
                     lugar = capac[i].lugar,
                     fecha = capac[i].fecha,
                     foto = capac[i].foto,
+                    foto_corto = foto.slice(0, -4),
                     texto = capac[i].texto,
                     etiqCapac = capac[i].etiqueta,
                     destacado = capac[i].destacado;
@@ -127,7 +135,7 @@ $(function () {
                     let capacita = '<div class="capac destacado"><div class="etiqCapac">'+ etiqCapac +'</div>';
                         capacita += '<h2 class="titu">' + titulo + '</h2>';
                         capacita += '<div class="infoCapac"><p class="lugar">' + lugar + '</p><p class="fechaCapac">' + fecha + '</p></div>';
-                        capacita += '<div class="foto" style="background-image:url(img/capac/'+ foto+')"></div>';
+                        capacita += '<div class="foto ' + foto_corto + '" style="background-image:url(img/capac/'+ foto+')"></div>';
                         capacita += '<div class="capacTex"><p class="tex">'+ texto +'</p></div>';
                         capacita += '</div>';
                     $('#destaCapac').append(capacita);
@@ -135,13 +143,33 @@ $(function () {
                     let capacita = '<div class="capac"><div class="etiqCapac">'+ etiqCapac +'</div>';
                         capacita += '<h2 class="titu">' + titulo + '</h2>';
                         capacita += '<div class="infoCapac"><p class="lugar">' + lugar + '</p><p class="fechaCapac">' + fecha + '</p></div>';
-                        capacita += '<div class="foto" style="background-image:url(img/capac/pasadas/'+ foto+')"></div>';
+                        capacita += '<div class="foto ' + foto_corto + '" style="background-image:url(img/capac/pasadas/'+ foto+')"></div>';
                         capacita += '<div class="capacTex"><p class="tex">'+ texto +'</p></div>';
                         capacita += '</div>';
                     $('#notiCapac').append(capacita);
                 }
 
             }
+        },
+
+        armaComision: function(notis){
+                //$('#notiCapac').append("<h2>COMISIÓN DIRECTIVA</h2>");
+
+                let comision = '<div class="comi"><div class="etiqCapac">COMISIÓN</div>';
+                    comision += '<h2 class="titu">Comisión Directiva</h2>';
+                    comision += '<p class="persona"><span>SECRETARIO GENERAL</span> <br>Gerardo E. Bacalini</br></br></p>';
+                    comision += '<p class="persona"><span>SECRETARIO ADJUNTO</span> <br>Gustavo A. Zakim.</br></br></p>';
+                    comision += '<p class="persona"><span>SECRETARIO DE ORGANIZACIÓN</span> <br>Oscar A. Monteros.</br></br></p>';
+                    comision += '<p class="persona"><span>SECRETARIO DE FINANZAS Y ADMINISTRACIÓN</span> <br>Gabriel Soriano.</br></br></p>';                 
+                    comision += '<p class="persona"><span>SECRETARIA DE PRENSA, DIFUSIÓN Y AFILIADOS</span> <br>Soledad Rivera.</br></br></p>';
+                    comision += '<p class="persona"><span>SECRETARIO DE CAPACITACIÓN Y CULTURA</span> <br>Federico C. Bacalini.</br></br></p>';
+                    comision += '<p class="persona"><span>SECRETARIO DE ACCIÓN SOCIAL</span> <br>Pablo Desimone.</br></br></p>';
+                    comision += '<p class="persona"><span>VOCALES</span> <br>Fabio Peralta, Mariano Jorajuría, Gonzalo Millaner, Leonardo Saieg.</br></br></p><br>';
+                    comision += '<p class="persona">Si querés contactarte con la Comisión escribí a <b><a href="mailto:contacto@sate.org.ar">contacto@sate.org.ar</a></b></p>';
+                    comision += '</div>';
+
+                $('#conteInsti').append(comision);
+                
         },
 
         armaSticky: function(){
@@ -254,10 +282,15 @@ $(function () {
                 botNotiFijo = $("#stickyNav .cont .menu #notiFijo"),
                 botInsti = $("#stickyNav .cont .menu #botones #institucional"),
                 botInstiFijo = $("#stickyNav .cont .menu #instiFijo"),
+                botInstiComision = $("#stickyNav .cont .menu #botones #instiFijo .comision"),
                 menuBotones = $("#stickyNav .cont .menu #botones"),
                 menuInstitucion = $("#stickyNav .cont .menu #botones #institucional #menuInsti #botonesMenuInsti"),
                 botCruz = $("#stickyNav .cont #cruz"),
-                botHambur = $("#stickyNav .cont #hambur");
+                botHambur = $("#stickyNav .cont #hambur"),
+                botInstiCh = $("footer .links #instiCh"),
+                botCapacCh = $("footer .links #capacCh"),
+                botNotiCh = $("footer .links #notiCh"),
+                botManuCh = $("footer .links #manuCh");
                 botManuFijo.hide();
                 botCapacFijo.hide();
                 botNotiFijo.hide();
@@ -277,6 +310,29 @@ $(function () {
 
             botManual.on("click", function(){
                 $("#conteManual").css("transition", "all .5s ease-in").css("display", "block");
+                $("#conteNoti, #conteCapaci, #conteInsti").css("transition", "all .5s ease-in").css("display", "none");
+                $("#conteNoti, #conteCapaci").css("transition", "all .5s ease-in").css("display", "none");
+                $("#selSecc").css("transition", "all .5s ease-in").css("opacity", 0);
+                botManual.addClass("active");
+                botCapaci.removeClass("active");
+                botNoti.removeClass("active");
+                botInsti.removeClass("active");
+                menuInstitucion.hide();
+                $("#tree").html("<span>HOME </span> > <span>"+botManual.text()+"</span>");
+
+                if(ancho < 640){
+                    botManuFijo.show();
+                    botCapacFijo.hide();
+                    botNotiFijo.hide();
+                    botInstiFijo.hide();
+                    menuBotones.slideToggle("fast");
+                    botCruz.hide();
+                    botHambur.show();
+                }
+            });
+            botManuCh.on("click", function(){
+                $("#conteManual").css("transition", "all .5s ease-in").css("display", "block");
+                $("#conteNoti, #conteCapaci, #conteInsti").css("transition", "all .5s ease-in").css("display", "none");
                 $("#conteNoti, #conteCapaci").css("transition", "all .5s ease-in").css("display", "none");
                 $("#selSecc").css("transition", "all .5s ease-in").css("opacity", 0);
                 botManual.addClass("active");
@@ -298,7 +354,28 @@ $(function () {
             });
             botCapaci.on("click", function(){
                 $("#conteCapaci").css("transition", "all .5s ease-in").css("display", "block");
-                $("#conteNoti, #conteManual").css("transition", "all .5s ease-in").css("display", "none");
+                $("#conteNoti, #conteManual, #conteInsti").css("transition", "all .5s ease-in").css("display", "none");
+                $("#selSecc").css("transition", "all .5s ease-in").css("opacity", 0);
+                botManual.removeClass("active");
+                botCapaci.addClass("active");
+                botNoti.removeClass("active");
+                botInsti.removeClass("active");
+                menuInstitucion.hide();
+                $("#tree").html("<span>HOME </span> > <span>"+botCapaci.text()+"</span>");
+
+                if(ancho < 640){
+                    botManuFijo.hide();
+                    botCapacFijo.show();
+                    botNotiFijo.hide();
+                    botInstiFijo.hide();
+                    menuBotones.slideToggle("fast");
+                    botCruz.hide();
+                    botHambur.show();
+                }
+            });
+            botCapacCh.on("click", function(){
+                $("#conteCapaci").css("transition", "all .5s ease-in").css("display", "block");
+                $("#conteNoti, #conteManual, #conteInsti").css("transition", "all .5s ease-in").css("display", "none");
                 $("#selSecc").css("transition", "all .5s ease-in").css("opacity", 0);
                 botManual.removeClass("active");
                 botCapaci.addClass("active");
@@ -319,7 +396,28 @@ $(function () {
             });
             botNoti.on("click", function(){
                 $("#conteNoti").css("transition", "all .5s ease-in").css("display", "block");
-                $("#conteCapaci, #conteManual").css("transition", "all .5s ease-in").css("display", "none");
+                $("#conteCapaci, #conteManual, #conteInsti").css("transition", "all .5s ease-in").css("display", "none");
+                $("#selSecc").css("transition", "all .5s ease-in").css("opacity", 1);
+                botManual.removeClass("active");
+                botCapaci.removeClass("active");
+                botNoti.addClass("active");
+                botInsti.removeClass("active");
+                menuInstitucion.hide();
+                $("#tree").html("<span>HOME </span> > <span>"+botNoti.text()+"</span>");
+
+                if(ancho < 640){
+                    botNotiFijo.show();
+                    botCapacFijo.hide();
+                    botManuFijo.hide();
+                    botInstiFijo.hide();
+                    menuBotones.slideToggle("fast");
+                    botCruz.hide();
+                    botHambur.show();
+                }
+            });
+            botNotiCh.on("click", function(){
+                $("#conteNoti").css("transition", "all .5s ease-in").css("display", "block");
+                $("#conteCapaci, #conteManual, #conteInsti").css("transition", "all .5s ease-in").css("display", "none");
                 $("#selSecc").css("transition", "all .5s ease-in").css("opacity", 1);
                 botManual.removeClass("active");
                 botCapaci.removeClass("active");
@@ -339,8 +437,8 @@ $(function () {
                 }
             });
             botInsti.on("click", function(){
-                //$("#conteInsti").css("transition", "all .5s ease-in").css("display", "block");
-                //$("#conteCapaci, #conteManual, #conteNoti").css("transition", "all .5s ease-in").css("display", "none");
+                $("#conteInsti").css("transition", "all .5s ease-in").css("display", "block");
+                $("#conteCapaci, #conteManual, #conteNoti").css("transition", "all .5s ease-in").css("display", "none");
                 $("#selSecc").css("transition", "all .5s ease-in").css("opacity", 0);
                 botManual.removeClass("active");
                 botCapaci.removeClass("active");
@@ -349,7 +447,32 @@ $(function () {
                 //menuInstitucion.show();
                 menuInstitucion.slideToggle("fast");
                 let botInsti2 = $("#stickyNav .cont .menu #botones #institucional a");
-                $("#tree").html("<span>HOME </span> > <span>"+botInsti2.text()+"</span>"+"</span>");
+                let botInstiComision = $("#stickyNav .cont .menu #botones #institucional a.comision");
+                $("#tree").html("<span>HOME </span> > <span>INSTITUCIONAL</span> > <span>"+botInstiComision.text()+"</span></span>");
+
+                if(ancho < 640){
+                    botInstiFijo.show();
+                    botCapacFijo.hide();
+                    botManuFijo.hide();
+                    botNotiFijo.hide();
+                    menuBotones.slideToggle("fast");
+                    botCruz.hide();
+                    botHambur.show();
+                }
+            });
+            botInstiCh.on("click", function(){
+                $("#conteInsti").css("transition", "all .5s ease-in").css("display", "block");
+                $("#conteCapaci, #conteManual, #conteNoti").css("transition", "all .5s ease-in").css("display", "none");
+                $("#selSecc").css("transition", "all .5s ease-in").css("opacity", 0);
+                botManual.removeClass("active");
+                botCapaci.removeClass("active");
+                botNoti.removeClass("active");
+                botInsti.addClass("active");
+                //menuInstitucion.show();
+                menuInstitucion.slideToggle("fast");
+                let botInsti2 = $("#stickyNav .cont .menu #botones #institucional a");
+                let botInstiComision = $("#stickyNav .cont .menu #botones #institucional a.comision");
+                $("#tree").html("<span>HOME </span> > <span>INSTITUCIONAL</span> > <span>"+botInstiComision.text()+"</span></span>");
 
                 if(ancho < 640){
                     botInstiFijo.show();
