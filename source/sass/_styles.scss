@@ -363,7 +363,10 @@ nav#stickyNav{
 				background-position: center;
 				background-repeat: no-repeat;
 
-				&.SATE-flyer_asamblea2020{
+				&.flyer_asamblea2020_suspendida{
+					background-position: top;
+				}
+				&.ayudaSolidaria{
 					background-position: top;
 				}
 			}

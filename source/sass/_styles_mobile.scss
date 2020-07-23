@@ -116,6 +116,7 @@
 					    padding: 5px;
 					}
 				}
+
 			}
 			.capac{
 				&.destacado{
@@ -161,6 +162,13 @@
 			iframe, img{
 				width: 97%;
 				margin: 50px 1%;
+			}
+		}
+		#conteNoti #contenedor, #conteNoti #destacados, #conteManual, #conteCapaci, #destaCapac, #notiCapac, #conteInsti, #conteComision{
+			.noti, .capac{
+				.foto{
+					background-size: 175%;
+				}
 			}
 		}
 	}
